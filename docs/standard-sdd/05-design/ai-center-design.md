@@ -11,7 +11,7 @@ Concrete design decisions that Codex (FE + BE) will implement. Covers file struc
 - [ai-center-architecture.md](../04-architecture/ai-center-architecture.md)
 - [ai-center-data-model.md](../04-architecture/ai-center-data-model.md)
 - [ai-center-API_IMPLEMENTATION_GUIDE.md](contracts/ai-center-API_IMPLEMENTATION_GUIDE.md)
-- Visual design system: `../../design.md` (project root)
+- Visual design system: `visual-design-system.md`
 
 ---
 
@@ -231,7 +231,7 @@ See `ai-center-data-model.md` §5 for DDL. Additional design decisions:
 
 ## 5. Visual Design Decisions
 
-Per project `design.md` §2 (Tactical Command aesthetic).
+Per `visual-design-system.md` §2 (Tactical Command aesthetic).
 
 ### 5.1 Color Tokens (reused)
 

@@ -15,7 +15,7 @@ It bridges the [architecture](../04-architecture/incident-architecture.md) and t
 - Architecture: [incident-architecture.md](../04-architecture/incident-architecture.md)
 - Data Model: [incident-data-model.md](../04-architecture/incident-data-model.md)
 - API Guide: [incident-API_IMPLEMENTATION_GUIDE.md](contracts/incident-API_IMPLEMENTATION_GUIDE.md)
-- Visual design system: [design.md](../../design.md) (§The Tactical Command)
+- Visual design system: [visual-design-system.md](visual-design-system.md) (§The Tactical Command)
 
 ## 1. File Structure
 

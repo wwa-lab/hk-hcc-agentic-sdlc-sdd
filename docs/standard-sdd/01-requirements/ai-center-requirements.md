@@ -263,7 +263,7 @@ AI Center content must be organized as modular cards following the shared design
 
 Visual style must be high-density and enterprise-grade, matching the "Tactical Command" aesthetic used by Dashboard and Incident. Skill status and autonomy level use the shared status color tokens (operational/warning/critical/ok).
 
-> Source: PRD §15.5, `design.md` §2
+> Source: PRD §15.5, `visual-design-system.md` §2
 
 ### REQ-AIC-72: States
 
@@ -347,7 +347,7 @@ The `Skill`, `SkillExecution`, `Policy`, and `Evidence` entities must live under
 | REQ-AIC-60 | Dashboard slice |
 | REQ-AIC-61 | — (UX-derived) |
 | REQ-AIC-70 | §15.3 |
-| REQ-AIC-71 | §15.5, `design.md` §2 |
+| REQ-AIC-71 | §15.5, `visual-design-system.md` §2 |
 | REQ-AIC-72 | — |
 | REQ-AIC-73 | — |
 | REQ-AIC-80 | — |

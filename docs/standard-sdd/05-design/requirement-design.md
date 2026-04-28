@@ -15,7 +15,7 @@ It bridges the [architecture](../04-architecture/requirement-architecture.md) an
 - Architecture: [requirement-architecture.md](../04-architecture/requirement-architecture.md)
 - Data Model: [requirement-data-model.md](../04-architecture/requirement-data-model.md)
 - API Guide: [requirement-API_IMPLEMENTATION_GUIDE.md](contracts/requirement-API_IMPLEMENTATION_GUIDE.md)
-- Visual design system: [design.md](../../design.md) (The Tactical Command)
+- Visual design system: [visual-design-system.md](visual-design-system.md) (The Tactical Command)
 
 ## 1. File Structure
 

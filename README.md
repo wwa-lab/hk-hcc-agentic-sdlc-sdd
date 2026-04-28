@@ -51,6 +51,27 @@ docs/
     └── 10-code-review/
 ```
 
+The docs root intentionally avoids generic `00-context` and `07-prompts`
+folders. Context and generation prompts are workspace/tooling artifacts; this
+repo keeps only profile-owned SDD source documents and metadata templates.
+
+## Standard SDD Gate
+
+For `standard-sdd`, each implementation slice should produce the complete
+document set before coding starts:
+
+- `01-requirements/{slice}-requirements.md`
+- `02-user-stories/{slice}-stories.md`
+- `03-spec/{slice}-spec.md`
+- `04-architecture/{slice}-architecture.md`
+- `04-architecture/{slice}-data-flow.md`
+- `04-architecture/{slice}-data-model.md`
+- `05-design/{slice}-design.md`
+- `05-design/contracts/{slice}-API_IMPLEMENTATION_GUIDE.md`
+- `06-tasks/{slice}-tasks.md`
+
+For IBM i, use the staged chain under `docs/ibm-i/README.md`.
+
 ## Graph Metadata
 
 Graph-participating documents should start with YAML front matter. Standard SDD

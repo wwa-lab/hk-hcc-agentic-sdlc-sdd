@@ -11,7 +11,7 @@ This document is the implementation-facing design for the Platform Center slice.
 - [platform-center-data-flow.md](../04-architecture/platform-center-data-flow.md)
 - [platform-center-data-model.md](../04-architecture/platform-center-data-model.md)
 - [platform-center-API_IMPLEMENTATION_GUIDE.md](contracts/platform-center-API_IMPLEMENTATION_GUIDE.md)
-- [design.md (root)](../../design.md) — visual design system
+- [visual-design-system.md](visual-design-system.md) — visual design system
 - [design.md (product)](design.md) — product-module design
 - Existing patterns: `frontend/src/features/incident/`, `frontend/src/features/dashboard/`, `frontend/src/features/project-space/`
 
@@ -430,7 +430,7 @@ All routes are children of the `/platform` parent route, which runs the admin gu
 
 ## 6. Visual Design Decisions
 
-### 6.1 Color tokens (shared, per `design.md`)
+### 6.1 Color tokens (shared, per `visual-design-system.md`)
 
 | Token | Usage |
 |-------|-------|
@@ -440,7 +440,7 @@ All routes are children of the `/platform` parent route, which runs the admin gu
 | `--color-neutral` | `inactive`, `disabled` |
 | `--color-accent-primary` | Active sub-section rail indicator |
 
-Exact hex values come from `design.md`; Platform Center references tokens by name.
+Exact hex values come from `visual-design-system.md`; Platform Center references tokens by name.
 
 ### 6.2 Typography
 

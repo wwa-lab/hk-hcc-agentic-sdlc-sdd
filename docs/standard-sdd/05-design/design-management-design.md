@@ -12,7 +12,7 @@ V1 is a **read-heavy lightweight viewer** over internal Stitch / HTML mocks. Wri
 - Architecture: [../04-architecture/design-management-architecture.md](../04-architecture/design-management-architecture.md)
 - Data flow: [../04-architecture/design-management-data-flow.md](../04-architecture/design-management-data-flow.md)
 - Data model: [../04-architecture/design-management-data-model.md](../04-architecture/design-management-data-model.md)
-- Visual design system: [design.md](design.md) (project-wide)
+- Visual design system: [visual-design-system.md](visual-design-system.md)
 - Sibling slice conventions: [project-management-design.md](project-management-design.md), [requirement-design.md](requirement-design.md)
 - Stitch mocks to reference: [Control Tower.html](Control%20Tower.html), [Incident Command Center.html](Incident%20Command%20Center.html), [Platform Center.html](Platform%20Center.html), [Project Space.html](Project%20Space.html)
 
@@ -289,7 +289,7 @@ export const useDesignManagementStore = defineStore('design-management', {
 
 ### 4.1 Tokens
 
-Design Management inherits the Tactical Command token set from [design.md](design.md). No slice-specific tokens are introduced. Specifically:
+Design Management inherits the Tactical Command token set from [visual-design-system.md](visual-design-system.md). No slice-specific tokens are introduced. Specifically:
 
 - Crimson accents — `STALE` / `MISSING` coverage; orphan artifacts; over-limit warnings
 - Amber accents — `PARTIAL` coverage; `READY_FOR_REVIEW` lifecycle chip; "AI Summary pending" chip

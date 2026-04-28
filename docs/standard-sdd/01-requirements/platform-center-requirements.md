@@ -9,7 +9,7 @@ This document extracts the requirements relevant to the **Platform Center** page
 All requirements below are derived from:
 
 - [agentic_sdlc_control_tower_prd_v0.9.md](agentic_sdlc_control_tower_prd_v0.9.md) — primary PRD
-- [design.md](../../design.md) — root visual design system
+- [visual-design-system.md](../05-design/visual-design-system.md) — visual design system
 - [design.md](../05-design/design.md) — product-module design system
 
 Section references use the format `PRD §N.N`.
@@ -375,13 +375,13 @@ Platform Center uses a **two-pane layout**:
 
 This differs from the single-scroll card layouts used by Dashboard or AI Center because the admin use case is "find and edit a specific record" rather than "scan a story."
 
-> Source: PRD §15.3 (modular) adapted to admin UX; design.md token system
+> Source: PRD §15.3 (modular) adapted to admin UX; visual-design-system.md token system
 
 ### REQ-PC-71: Shared design tokens
 
-All sub-sections must use the tokens, typography, and status colors from the shared design system (`design.md` root). Status badges (`active` / `draft` / `deprecated` / `error`) reuse the shared OK / Warning / Critical palette.
+All sub-sections must use the tokens, typography, and status colors from the shared design system (`visual-design-system.md`). Status badges (`active` / `draft` / `deprecated` / `error`) reuse the shared OK / Warning / Critical palette.
 
-> Source: `design.md` §2, `docs/standard-sdd/05-design/design.md`
+> Source: `visual-design-system.md` §2, `docs/standard-sdd/05-design/design.md`
 
 ### REQ-PC-72: States
 
@@ -504,7 +504,7 @@ All mutating Platform Center endpoints must emit an audit record **as part of th
 | REQ-PC-63 | §12.6 |
 | REQ-PC-64 | §12.6 |
 | REQ-PC-70 | §15.3 |
-| REQ-PC-71 | `design.md` §2, `docs/standard-sdd/05-design/design.md` |
+| REQ-PC-71 | `visual-design-system.md` §2, `docs/standard-sdd/05-design/design.md` |
 | REQ-PC-72 | — (UX-derived) |
 | REQ-PC-73 | §16.3 |
 | REQ-PC-80 | CLAUDE.md Lesson #2; slice decision |

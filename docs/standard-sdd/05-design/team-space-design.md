@@ -10,7 +10,7 @@ This document defines the concrete implementation design of the Team Space slice
 - Architecture: [team-space-architecture.md](../04-architecture/team-space-architecture.md)
 - Data Model: [team-space-data-model.md](../04-architecture/team-space-data-model.md)
 - API Guide: [contracts/team-space-API_IMPLEMENTATION_GUIDE.md](contracts/team-space-API_IMPLEMENTATION_GUIDE.md)
-- Visual System: [design.md](design.md) (project-root visual system)
+- Visual System: [design.md](design.md) (profile visual system)
 
 ---
 
@@ -338,7 +338,7 @@ Tabs for strata: Healthy / At-Risk / Critical / Archived with counters.
 | Trend in bad direction | `--trend-negative` |
 | Trend FLAT | `--trend-neutral` |
 
-Tokens already defined in the root `design.md` visual system. Team Space reuses them without introducing new palette entries.
+Tokens already defined in the `visual-design-system.md`. Team Space reuses them without introducing new palette entries.
 
 ### 4.2 Typography
 

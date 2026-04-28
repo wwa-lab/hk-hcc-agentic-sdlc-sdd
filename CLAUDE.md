@@ -190,7 +190,7 @@ Prefer small, composable contracts over a large orchestration framework. Build t
 
 ### 1. Search the full project before assuming file locations
 
-**What happened:** When creating the Gemini prompt, I only referenced `docs/standard-sdd/05-design/design.md` (product module design) and missed `design.md` at the project root (visual design system). The user had to correct me twice.
+**What happened:** When creating the Gemini prompt, I only referenced `docs/standard-sdd/05-design/design.md` (product module design) and missed `docs/standard-sdd/05-design/visual-design-system.md` (visual design system). The user had to correct me twice.
 
 **Rule:** Before referencing any document, always `Glob` for all matching files across the entire project. Do not assume a file only exists in one location. Ask if ambiguous.
 

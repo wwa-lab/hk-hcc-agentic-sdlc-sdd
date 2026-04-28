@@ -439,7 +439,7 @@ Visual style must be high-density and enterprise-grade, with the "Tactical
 Command" aesthetic. Critical priority requirements should use the crimson
 accent.
 
-> Source: PRD §15.5, design.md §2
+> Source: PRD §15.5, visual-design-system.md §2
 
 ### REQ-REQ-102: States
 

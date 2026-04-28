@@ -9,7 +9,7 @@ Concrete implementation design for the Project Management slice — file structu
 - Spec: [../03-spec/project-management-spec.md](../03-spec/project-management-spec.md)
 - Architecture: [../04-architecture/project-management-architecture.md](../04-architecture/project-management-architecture.md)
 - Data model: [../04-architecture/project-management-data-model.md](../04-architecture/project-management-data-model.md)
-- Visual design system: [design.md](design.md) (project-wide)
+- Visual design system: [visual-design-system.md](visual-design-system.md)
 - Sibling slice conventions: [project-space-design.md](project-space-design.md)
 
 ---
@@ -270,14 +270,14 @@ The full contract is in [contracts/project-management-API_IMPLEMENTATION_GUIDE.m
 
 ### 5.1 Tokens (reuse shared design system)
 
-- **Palette**: Tactical Command dark theme (per [design.md](design.md)).
+- **Palette**: Tactical Command dark theme (per [visual-design-system.md](visual-design-system.md)).
 - **Health LEDs**: Green `--led-green`, Yellow `--led-yellow`, Red `--led-red`, Unknown `--led-neutral`.
 - **Crimson accent**: `--accent-crimson` — used for: Slipped milestones, Critical risks, Over-allocation row total, Blocked dependency rows, Rejected state chips.
 - **Amber accent**: `--accent-amber` — used for: At-Risk milestones, under-utilization capacity, At-Risk dependency.
 - **Spacing**: 8px grid. Card gutter 16px. Internal padding 16–24px.
 - **Typography**: workbench-SaaS scale — `--type-xs` / `--type-sm` / `--type-md` / `--type-lg`. Tabular numerals enabled on all numeric columns (`font-variant-numeric: tabular-nums`).
 - **Elevation**: subtle 1px border `--border-subtle`; no drop shadows on cards.
-- **Grid**: 12-column CSS grid, responsive breakpoints from `design.md`.
+- **Grid**: 12-column CSS grid, responsive breakpoints from `visual-design-system.md`.
 
 ### 5.2 Portfolio layout (12-col grid)
 

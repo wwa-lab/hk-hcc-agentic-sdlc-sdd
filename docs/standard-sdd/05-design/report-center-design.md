@@ -37,7 +37,7 @@ Report Center must feel **distinct from Dashboard** (REQ-RPT-03, RPT-S02):
 
 ### 1.2 Tokens
 
-Reuse the existing design system tokens (see root `design.md`). Report
+Reuse the existing design system tokens (see `visual-design-system.md`). Report
 Center introduces one semantic variant:
 
 ```css
@@ -50,7 +50,7 @@ Center introduces one semantic variant:
 
 - ECharts 5.x theme extends the platform design system (colors, grid,
   tooltip).
-- Series colors follow the existing categorical palette from `design.md`.
+- Series colors follow the existing categorical palette from `visual-design-system.md`.
 - No color-only signal: every series has a distinct dash or marker pattern
   (REQ-RPT-82 accessibility).
 

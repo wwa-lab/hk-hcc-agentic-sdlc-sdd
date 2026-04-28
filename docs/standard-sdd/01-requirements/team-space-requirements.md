@@ -400,7 +400,7 @@ Team Space must follow the shared design system's Widget/Card pattern with 8-car
 
 Visual density and enterprise-grade styling must follow the "Tactical Command" aesthetic. Critical risks use the crimson accent. Health states use the standard green / yellow / red LED palette.
 
-> Source: PRD §15.5, design.md §2
+> Source: PRD §15.5, visual-design-system.md §2
 
 ### REQ-TS-132: States
 

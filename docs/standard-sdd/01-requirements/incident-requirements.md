@@ -296,7 +296,7 @@ Visual style must be high-density and enterprise-grade, with the "Tactical
 Command" aesthetic. Incident severity should use the crimson accent for
 critical items.
 
-> Source: PRD §15.5, design.md §2
+> Source: PRD §15.5, visual-design-system.md §2
 
 ### REQ-INC-92: States
 

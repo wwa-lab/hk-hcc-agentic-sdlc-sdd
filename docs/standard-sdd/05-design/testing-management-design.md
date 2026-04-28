@@ -212,7 +212,7 @@ Breakpoints: ≥1280 as above; 1024–1279: Summary/Filter full-width, Grid abov
 
 ## 4. Visual Tokens
 
-Reuses shared Tactical Command tokens. New tokens added only if absent from design.md:
+Reuses shared Tactical Command tokens. New tokens added only if absent from `visual-design-system.md`:
 
 - `--color-status-green` (coverage ≥80%), `--color-status-amber` (50–79%), `--color-status-red` (<50%), `--color-status-grey` (no linked REQs)
 - `--color-test-type-functional`, `--color-test-type-regression`, `--color-test-type-smoke`, `--color-test-type-perf`, `--color-test-type-security`

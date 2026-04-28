@@ -12,7 +12,7 @@ the [architecture](../04-architecture/shared-app-shell-architecture.md) and the
 - Stories: [shared-app-shell-stories.md](../02-user-stories/shared-app-shell-stories.md)
 - Spec: [shared-app-shell-spec.md](../03-spec/shared-app-shell-spec.md)
 - Architecture: [shared-app-shell-architecture.md](../04-architecture/shared-app-shell-architecture.md)
-- Visual design system: [design.md](../../design.md) (root — "Tactical Command")
+- Visual design system: [visual-design-system.md](visual-design-system.md) ("Tactical Command")
 - Product design: [design.md](design.md) (Module Design, Component Seed)
 
 ## 1. File Structure
@@ -250,7 +250,7 @@ Standard Spring Boot health endpoint. Returns `200 OK` with `{"status": "UP"}`.
 ## 6. Visual Design Decisions
 
 The shell implements the "Tactical Command" design system from
-[design.md](../../design.md). Key decisions for this slice:
+[visual-design-system.md](visual-design-system.md). Key decisions for this slice:
 
 ### Surface Hierarchy (No-Line Rule)
 

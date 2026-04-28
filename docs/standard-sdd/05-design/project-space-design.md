@@ -10,7 +10,7 @@ This document defines the concrete implementation design of the Project Space sl
 - Architecture: [project-space-architecture.md](../04-architecture/project-space-architecture.md)
 - Data Model: [project-space-data-model.md](../04-architecture/project-space-data-model.md)
 - API Guide: [contracts/project-space-API_IMPLEMENTATION_GUIDE.md](contracts/project-space-API_IMPLEMENTATION_GUIDE.md)
-- Visual System: [design.md](design.md) (project-root visual system)
+- Visual System: [design.md](design.md) (profile visual system)
 - Visual mockup: [Project Space.html](./Project%20Space.html)
 
 ---
@@ -335,7 +335,7 @@ Shown on hover of the health LED; lists contributing factors with severity color
 | External dependency chip | `--chip-muted` |
 | Override / backup-missing chip | `--chip-emphasis` |
 
-Tokens already defined in the root `design.md` visual system. Project Space reuses them without introducing new palette entries.
+Tokens already defined in the `visual-design-system.md`. Project Space reuses them without introducing new palette entries.
 
 ### 4.2 Typography
 
