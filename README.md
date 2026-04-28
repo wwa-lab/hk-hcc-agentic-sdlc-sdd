@@ -30,30 +30,34 @@ values in front matter.
 ## Layout
 
 ```text
-docs/
-├── standard-sdd/
-│   └── projects/
-│       └── control-tower/
-│           ├── 01-requirements/
-│           ├── 02-user-stories/
-│           ├── 03-spec/
-│           ├── 04-architecture/
-│           ├── 05-design/
-│           │   └── contracts/
-│           └── 06-tasks/
-└── ibm-i/
-    └── projects/
-        └── hk-hcc-core/
-            ├── 01-requirement-normalizer/
-            ├── 02-functional-spec/
-            ├── 03-technical-design/
-            ├── 04-program-spec/
-            ├── 05-file-spec/
-            ├── 06-ut-plan/
-            ├── 07-test-scaffold/
-            ├── 08-spec-review/
-            ├── 09-dds-review/
-            └── 10-code-review/
+.
+├── docs/
+│   ├── standard-sdd/
+│   │   └── projects/
+│   │       └── control-tower/
+│   │           ├── 01-requirements/
+│   │           ├── 02-user-stories/
+│   │           ├── 03-spec/
+│   │           ├── 04-architecture/
+│   │           ├── 05-design/
+│   │           │   └── contracts/
+│   │           └── 06-tasks/
+│   └── ibm-i/
+│       └── projects/
+│           └── hk-hcc-core/
+│               ├── 01-requirement-normalizer/
+│               ├── 02-functional-spec/
+│               ├── 03-technical-design/
+│               ├── 04-program-spec/
+│               ├── 05-file-spec/
+│               ├── 06-ut-plan/
+│               ├── 07-test-scaffold/
+│               ├── 08-spec-review/
+│               ├── 09-dds-review/
+│               └── 10-code-review/
+└── .github/
+    └── workflows/
+        └── notify-kg-sync.yml
 ```
 
 The docs root intentionally avoids generic `00-context` and `07-prompts`
@@ -194,3 +198,30 @@ npm run sync:ibm-i
 ```
 
 The generated repository owns `_graph/` artifacts and Neo4j ingestion inputs.
+
+## Hosted Graph Sync
+
+This repo notifies the structured data repo automatically when SDD source
+documents change on `main`.
+
+Trigger behavior:
+
+- Pushes to `main` under `docs/**` run `.github/workflows/notify-kg-sync.yml`.
+- The workflow detects changed project folders under
+  `docs/{profile}/projects/{project-id}/`.
+- For each changed project, it sends a `repository_dispatch` event to
+  `wwa-lab/hk-hcc-agentic-sdlc-kg-data`.
+- The structured data repo then checks out this SDD repo, regenerates
+  `_graph/{profile}/{project-id}/`, commits changes, and pushes them.
+
+Required repository setup:
+
+- Add `KG_SYNC_TOKEN` to this repo's Actions secrets.
+- The token should be able to create `repository_dispatch` events in
+  `wwa-lab/hk-hcc-agentic-sdlc-kg-data`; a fine-grained token scoped to that
+  repo with contents write permission is sufficient.
+
+You can still run sync manually from the structured data repo through
+**Actions** -> **Sync Graph Artifacts** -> **Run workflow**. That is the same
+workflow an application page should trigger from its backend when a user clicks
+"Sync graph".

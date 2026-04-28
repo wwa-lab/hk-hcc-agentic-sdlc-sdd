@@ -1,0 +1,105 @@
+name: Notify KG Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout SDD repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve changed SDD projects
+        id: targets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          before="${{ github.event.before }}"
+          after="${{ github.sha }}"
+
+          if [ "$before" = "0000000000000000000000000000000000000000" ]; then
+            git ls-tree -r --name-only "$after" > /tmp/changed-files.txt
+          else
+            git diff --name-only "$before" "$after" > /tmp/changed-files.txt
+          fi
+
+          awk -F/ '
+            /^docs\/standard-sdd\/projects\/[^/]+\// { print "standard-sdd " $4 }
+            /^docs\/ibm-i\/projects\/[^/]+\// { print "ibm-i " $4 }
+          ' /tmp/changed-files.txt | sort -u > /tmp/sync-targets.txt
+
+          if [ ! -s /tmp/sync-targets.txt ]; then
+            {
+              echo "standard-sdd control-tower"
+              echo "ibm-i hk-hcc-core"
+            } > /tmp/sync-targets.txt
+          fi
+
+          {
+            echo "targets<<EOF"
+            cat /tmp/sync-targets.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch KG sync workflows
+        env:
+          KG_SYNC_TOKEN: ${{ secrets.KG_SYNC_TOKEN }}
+          SOURCE_BRANCH: ${{ github.ref_name }}
+          TARGETS: ${{ steps.targets.outputs.targets }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -z "${KG_SYNC_TOKEN:-}" ]; then
+            echo "Missing secret KG_SYNC_TOKEN. Add a token that can create repository_dispatch events in wwa-lab/hk-hcc-agentic-sdlc-kg-data." >&2
+            exit 1
+          fi
+
+          while read -r profile project_id; do
+            [ -n "$profile" ] || continue
+
+            application_id="hk-hcc"
+            snow_group="HK-HCC"
+
+            if [ "$profile" = "standard-sdd" ]; then
+              application_id="agentic-sdlc-control-tower"
+              snow_group=""
+            fi
+
+            printf 'Dispatching KG sync for %s/%s\n' "$profile" "$project_id"
+
+            payload=$(node -e '
+              const [profile, projectId, sourceBranch, applicationId, snowGroup] = process.argv.slice(1);
+              process.stdout.write(JSON.stringify({
+                event_type: "sdd-graph-sync",
+                client_payload: {
+                  profile,
+                  project_id: projectId,
+                  source_branch: sourceBranch,
+                  workspace_id: "ws-default-001",
+                  application_id: applicationId,
+                  snow_group: snowGroup
+                }
+              }));
+            ' "$profile" "$project_id" "$SOURCE_BRANCH" "$application_id" "$snow_group")
+
+            curl -fsS \
+              -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Bearer ${KG_SYNC_TOKEN}" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              https://api.github.com/repos/wwa-lab/hk-hcc-agentic-sdlc-kg-data/dispatches \
+              -d "$payload"
+          done <<< "$TARGETS"
