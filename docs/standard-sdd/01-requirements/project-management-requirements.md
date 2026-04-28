@@ -18,7 +18,7 @@ Both views live in the same slice because they share the same underlying entitie
 All requirements below are derived from:
 
 - [agentic_sdlc_control_tower_prd_v0.9.md](agentic_sdlc_control_tower_prd_v0.9.md)
-- Visual reference: no dedicated Project Management HTML mockup exists in `docs/05-design/` as of 2026-04-17; the MilestoneExecutionHub pattern in [Project Space.html](../05-design/Project%20Space.html) and the general Tactical Command aesthetic in [design.md](../05-design/design.md) are the reuse anchors.
+- Visual reference: no dedicated Project Management HTML mockup exists in `docs/standard-sdd/05-design/` as of 2026-04-17; the MilestoneExecutionHub pattern in [Project Space.html](../05-design/Project%20Space.html) and the general Tactical Command aesthetic in [design.md](../05-design/design.md) are the reuse anchors.
 - Cross-slice references: [project-space-requirements.md](project-space-requirements.md), [team-space-requirements.md](team-space-requirements.md), [dashboard-requirements.md](dashboard-requirements.md).
 
 Section references use the format `PRD §N.N`.

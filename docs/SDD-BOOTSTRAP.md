@@ -6,16 +6,15 @@ Use the repo in a simple, repeatable `Spec Driven Development` loop before writi
 
 ## Recommended Order
 
-Follow this sequence for each slice:
+Follow this sequence for each Standard SDD slice under `standard-sdd/`:
 
-1. `00-context`
-2. `01-requirements` — `{slice}-requirements.md`
-3. `02-user-stories` — `{slice}-stories.md`
-4. `03-spec` — `{slice}-spec.md`
-5. `04-architecture` — `{slice}-architecture.md` + `{slice}-data-flow.md` + `{slice}-data-model.md`
-6. `05-design` — `{slice}-design.md` + `contracts/{slice}-API_IMPLEMENTATION_GUIDE.md`
-7. `06-tasks` — `{slice}-tasks.md`
-8. code
+1. `standard-sdd/01-requirements` — `{slice}-requirements.md`
+2. `standard-sdd/02-user-stories` — `{slice}-stories.md`
+3. `standard-sdd/03-spec` — `{slice}-spec.md`
+4. `standard-sdd/04-architecture` — `{slice}-architecture.md` + `{slice}-data-flow.md` + `{slice}-data-model.md`
+5. `standard-sdd/05-design` — `{slice}-design.md` + `contracts/{slice}-API_IMPLEMENTATION_GUIDE.md`
+6. `standard-sdd/06-tasks` — `{slice}-tasks.md`
+7. code
 
 ## Minimum Gate Before Code
 
@@ -38,20 +37,20 @@ Every slice must produce all 9 documents before coding starts. This is enforced 
 
 | # | Stage | File pattern | Content |
 |---|-------|-------------|---------|
-| 1 | Requirements | `01-requirements/{slice}-requirements.md` | Requirements extracted from PRD with REQ-IDs and PRD section refs |
-| 2 | User Stories | `02-user-stories/{slice}-stories.md` | Agile stories with acceptance criteria |
-| 3 | Spec | `03-spec/{slice}-spec.md` | Implementation-facing contracts |
-| 4 | Architecture | `04-architecture/{slice}-architecture.md` | System context, components, data flow, state, integration (with Mermaid diagrams) |
-| 5 | Design | `05-design/{slice}-design.md` | Concrete APIs, file structure, data model, visual decisions, DB schema |
-| 6 | Tasks | `06-tasks/{slice}-tasks.md` | Phased implementation breakdown |
+| 1 | Requirements | `standard-sdd/01-requirements/{slice}-requirements.md` | Requirements extracted from PRD with REQ-IDs and PRD section refs |
+| 2 | User Stories | `standard-sdd/02-user-stories/{slice}-stories.md` | Agile stories with acceptance criteria |
+| 3 | Spec | `standard-sdd/03-spec/{slice}-spec.md` | Implementation-facing contracts |
+| 4 | Architecture | `standard-sdd/04-architecture/{slice}-architecture.md` | System context, components, data flow, state, integration (with Mermaid diagrams) |
+| 5 | Design | `standard-sdd/05-design/{slice}-design.md` | Concrete APIs, file structure, data model, visual decisions, DB schema |
+| 6 | Tasks | `standard-sdd/06-tasks/{slice}-tasks.md` | Phased implementation breakdown |
 
 ### Supplementary Artifacts (3)
 
 | # | Stage | File pattern | Content |
 |---|-------|-------------|---------|
-| 7 | Data Flow | `04-architecture/{slice}-data-flow.md` | Runtime data flows, sequence diagrams, state machines, error cascade, refresh strategy |
-| 8 | Data Model | `04-architecture/{slice}-data-model.md` | Domain model ER diagram, frontend types, backend DTOs/entities, DB schema DDL, type mapping |
-| 9 | API Guide | `05-design/contracts/{slice}-API_IMPLEMENTATION_GUIDE.md` | Full endpoint contracts with JSON examples, backend/frontend implementation guide, testing contracts |
+| 7 | Data Flow | `standard-sdd/04-architecture/{slice}-data-flow.md` | Runtime data flows, sequence diagrams, state machines, error cascade, refresh strategy |
+| 8 | Data Model | `standard-sdd/04-architecture/{slice}-data-model.md` | Domain model ER diagram, frontend types, backend DTOs/entities, DB schema DDL, type mapping |
+| 9 | API Guide | `standard-sdd/05-design/contracts/{slice}-API_IMPLEMENTATION_GUIDE.md` | Full endpoint contracts with JSON examples, backend/frontend implementation guide, testing contracts |
 
 ## Slice Roadmap
 
@@ -80,15 +79,15 @@ Project Space is the single-project execution home — the contextual bridge bet
 
 Documents for this slice:
 
-- Requirements: [project-space-requirements.md](01-requirements/project-space-requirements.md)
-- Stories: [project-space-stories.md](02-user-stories/project-space-stories.md)
-- Spec: [project-space-spec.md](03-spec/project-space-spec.md)
-- Architecture: [project-space-architecture.md](04-architecture/project-space-architecture.md)
-- Data Flow: [project-space-data-flow.md](04-architecture/project-space-data-flow.md)
-- Data Model: [project-space-data-model.md](04-architecture/project-space-data-model.md)
-- Design: [project-space-design.md](05-design/project-space-design.md)
-- API Guide: [project-space-API_IMPLEMENTATION_GUIDE.md](05-design/contracts/project-space-API_IMPLEMENTATION_GUIDE.md)
-- Tasks: [project-space-tasks.md](06-tasks/project-space-tasks.md)
+- Requirements: [project-space-requirements.md](standard-sdd/01-requirements/project-space-requirements.md)
+- Stories: [project-space-stories.md](standard-sdd/02-user-stories/project-space-stories.md)
+- Spec: [project-space-spec.md](standard-sdd/03-spec/project-space-spec.md)
+- Architecture: [project-space-architecture.md](standard-sdd/04-architecture/project-space-architecture.md)
+- Data Flow: [project-space-data-flow.md](standard-sdd/04-architecture/project-space-data-flow.md)
+- Data Model: [project-space-data-model.md](standard-sdd/04-architecture/project-space-data-model.md)
+- Design: [project-space-design.md](standard-sdd/05-design/project-space-design.md)
+- API Guide: [project-space-API_IMPLEMENTATION_GUIDE.md](standard-sdd/05-design/contracts/project-space-API_IMPLEMENTATION_GUIDE.md)
+- Tasks: [project-space-tasks.md](standard-sdd/06-tasks/project-space-tasks.md)
 
 ## Active Add-On: SDD Knowledge Graph
 
@@ -99,15 +98,15 @@ decision support.
 
 Documents for this add-on:
 
-- Requirements: [sdd-knowledge-graph-requirements.md](01-requirements/sdd-knowledge-graph-requirements.md)
-- Stories: [sdd-knowledge-graph-stories.md](02-user-stories/sdd-knowledge-graph-stories.md)
-- Spec: [sdd-knowledge-graph-spec.md](03-spec/sdd-knowledge-graph-spec.md)
-- Architecture: [sdd-knowledge-graph-architecture.md](04-architecture/sdd-knowledge-graph-architecture.md)
-- Data Flow: [sdd-knowledge-graph-data-flow.md](04-architecture/sdd-knowledge-graph-data-flow.md)
-- Data Model: [sdd-knowledge-graph-data-model.md](04-architecture/sdd-knowledge-graph-data-model.md)
-- Design: [sdd-knowledge-graph-design.md](05-design/sdd-knowledge-graph-design.md)
-- API Guide: [sdd-knowledge-graph-API_IMPLEMENTATION_GUIDE.md](05-design/contracts/sdd-knowledge-graph-API_IMPLEMENTATION_GUIDE.md)
-- Tasks: [sdd-knowledge-graph-tasks.md](06-tasks/sdd-knowledge-graph-tasks.md)
+- Requirements: [sdd-knowledge-graph-requirements.md](standard-sdd/01-requirements/sdd-knowledge-graph-requirements.md)
+- Stories: [sdd-knowledge-graph-stories.md](standard-sdd/02-user-stories/sdd-knowledge-graph-stories.md)
+- Spec: [sdd-knowledge-graph-spec.md](standard-sdd/03-spec/sdd-knowledge-graph-spec.md)
+- Architecture: [sdd-knowledge-graph-architecture.md](standard-sdd/04-architecture/sdd-knowledge-graph-architecture.md)
+- Data Flow: [sdd-knowledge-graph-data-flow.md](standard-sdd/04-architecture/sdd-knowledge-graph-data-flow.md)
+- Data Model: [sdd-knowledge-graph-data-model.md](standard-sdd/04-architecture/sdd-knowledge-graph-data-model.md)
+- Design: [sdd-knowledge-graph-design.md](standard-sdd/05-design/sdd-knowledge-graph-design.md)
+- API Guide: [sdd-knowledge-graph-API_IMPLEMENTATION_GUIDE.md](standard-sdd/05-design/contracts/sdd-knowledge-graph-API_IMPLEMENTATION_GUIDE.md)
+- Tasks: [sdd-knowledge-graph-tasks.md](standard-sdd/06-tasks/sdd-knowledge-graph-tasks.md)
 
 ## Previous Slice: Team Space
 
@@ -115,15 +114,15 @@ Team Space is the Workspace-level operating home — the contextual bridge betwe
 
 Documents for this slice:
 
-- Requirements: [team-space-requirements.md](01-requirements/team-space-requirements.md)
-- Stories: [team-space-stories.md](02-user-stories/team-space-stories.md)
-- Spec: [team-space-spec.md](03-spec/team-space-spec.md)
-- Architecture: [team-space-architecture.md](04-architecture/team-space-architecture.md)
-- Data Flow: [team-space-data-flow.md](04-architecture/team-space-data-flow.md)
-- Data Model: [team-space-data-model.md](04-architecture/team-space-data-model.md)
-- Design: [team-space-design.md](05-design/team-space-design.md)
-- API Guide: [team-space-API_IMPLEMENTATION_GUIDE.md](05-design/contracts/team-space-API_IMPLEMENTATION_GUIDE.md)
-- Tasks: [team-space-tasks.md](06-tasks/team-space-tasks.md)
+- Requirements: [team-space-requirements.md](standard-sdd/01-requirements/team-space-requirements.md)
+- Stories: [team-space-stories.md](standard-sdd/02-user-stories/team-space-stories.md)
+- Spec: [team-space-spec.md](standard-sdd/03-spec/team-space-spec.md)
+- Architecture: [team-space-architecture.md](standard-sdd/04-architecture/team-space-architecture.md)
+- Data Flow: [team-space-data-flow.md](standard-sdd/04-architecture/team-space-data-flow.md)
+- Data Model: [team-space-data-model.md](standard-sdd/04-architecture/team-space-data-model.md)
+- Design: [team-space-design.md](standard-sdd/05-design/team-space-design.md)
+- API Guide: [team-space-API_IMPLEMENTATION_GUIDE.md](standard-sdd/05-design/contracts/team-space-API_IMPLEMENTATION_GUIDE.md)
+- Tasks: [team-space-tasks.md](standard-sdd/06-tasks/team-space-tasks.md)
 
 ## First Slice In This Repo
 
@@ -133,13 +132,12 @@ The first foundation slice was:
 
 Reference documents for this slice:
 
-- Context: [project-context.md](00-context/project-context.md)
-- Requirements: [shared-app-shell-requirements.md](01-requirements/shared-app-shell-requirements.md)
-- Stories: [shared-app-shell-stories.md](02-user-stories/shared-app-shell-stories.md)
-- Spec: [shared-app-shell-spec.md](03-spec/shared-app-shell-spec.md)
-- Architecture: [shared-app-shell-architecture.md](04-architecture/shared-app-shell-architecture.md)
-- Design: [shared-app-shell-design.md](05-design/shared-app-shell-design.md)
-- Tasks: [shared-app-shell-tasks.md](06-tasks/shared-app-shell-tasks.md)
+- Requirements: [shared-app-shell-requirements.md](standard-sdd/01-requirements/shared-app-shell-requirements.md)
+- Stories: [shared-app-shell-stories.md](standard-sdd/02-user-stories/shared-app-shell-stories.md)
+- Spec: [shared-app-shell-spec.md](standard-sdd/03-spec/shared-app-shell-spec.md)
+- Architecture: [shared-app-shell-architecture.md](standard-sdd/04-architecture/shared-app-shell-architecture.md)
+- Design: [shared-app-shell-design.md](standard-sdd/05-design/shared-app-shell-design.md)
+- Tasks: [shared-app-shell-tasks.md](standard-sdd/06-tasks/shared-app-shell-tasks.md)
 
 ## How To Use This Starter
 

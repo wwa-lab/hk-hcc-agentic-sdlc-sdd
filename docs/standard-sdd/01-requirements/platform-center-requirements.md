@@ -381,7 +381,7 @@ This differs from the single-scroll card layouts used by Dashboard or AI Center 
 
 All sub-sections must use the tokens, typography, and status colors from the shared design system (`design.md` root). Status badges (`active` / `draft` / `deprecated` / `error`) reuse the shared OK / Warning / Critical palette.
 
-> Source: `design.md` §2, `docs/05-design/design.md`
+> Source: `design.md` §2, `docs/standard-sdd/05-design/design.md`
 
 ### REQ-PC-72: States
 
@@ -405,10 +405,7 @@ Destructive actions (deactivate policy, revoke role, delete template draft, disa
 
 ### REQ-PC-80: Frontend and backend via Codex
 
-Per decision for this slice, **both the frontend and the backend** for Platform Center are generated via **Codex** (not Gemini). Two Codex prompts live under `docs/07-prompts/`:
-
-- `codex-platform-center-frontend.md` — Vue 3 + Pinia + TS scope
-- `codex-platform-center-backend.md` — Spring Boot + JPA + Flyway scope
+Per decision for this slice, **both the frontend and the backend** for Platform Center are generated via **Codex** (not Gemini). The implementation prompt artifacts were used during initial app generation and are not part of this profile-first SDD source repo.
 
 This deviates from the Dashboard slice (which used Gemini for FE, Codex for BE) and is explicitly noted here.
 
@@ -507,7 +504,7 @@ All mutating Platform Center endpoints must emit an audit record **as part of th
 | REQ-PC-63 | §12.6 |
 | REQ-PC-64 | §12.6 |
 | REQ-PC-70 | §15.3 |
-| REQ-PC-71 | `design.md` §2, `docs/05-design/design.md` |
+| REQ-PC-71 | `design.md` §2, `docs/standard-sdd/05-design/design.md` |
 | REQ-PC-72 | — (UX-derived) |
 | REQ-PC-73 | §16.3 |
 | REQ-PC-80 | CLAUDE.md Lesson #2; slice decision |

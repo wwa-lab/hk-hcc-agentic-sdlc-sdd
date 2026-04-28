@@ -356,7 +356,7 @@ export interface RegisterArtifactRequest {
   lifecycleStage?: LifecycleStage // default DRAFT
   authorMemberIds: string[]
   htmlPayload: string              // inline
-  htmlPath?: string                // alternative to payload: docs/05-design/*.html reference
+  htmlPath?: string                // alternative to payload: docs/standard-sdd/05-design/*.html reference
   initialSpecLinks?: Array<{
     specId: string
     declaredCoverage: DeclaredCoverage

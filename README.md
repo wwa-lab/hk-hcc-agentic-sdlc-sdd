@@ -6,8 +6,8 @@ Development documents for Agentic SDLC Control Tower.
 ## Repository Role
 
 - Owns Markdown SDD source documents.
-- Keeps requirements, stories, specs, architecture, design, API guides, tasks,
-  and prompts reviewable in Git.
+- Keeps profile-specific requirements, stories/specs, architecture, design,
+  API guides, tasks, and IBM i artifacts reviewable in Git.
 - Provides stable document metadata for downstream structured graph generation.
 - Does not store generated graph artifacts.
 
@@ -22,22 +22,22 @@ Supported profiles:
 - `ibm-i`: IBM i delivery chain with RPG/CL/DDS-oriented artifacts and review
   gates.
 
-The existing top-level numbered folders are the `standard-sdd` baseline. IBM i
-work should use `docs/ibm-i/` and `profile: "ibm-i"` in front matter.
+Use `docs/standard-sdd/` for the generic SDD profile and `docs/ibm-i/` for IBM
+i work. Every graph-participating document should set the matching `profile`
+value in front matter.
 
 ## Layout
 
 ```text
 docs/
-├── 00-context/
-├── 01-requirements/
-├── 02-user-stories/
-├── 03-spec/
-├── 04-architecture/
-├── 05-design/
-│   └── contracts/
-├── 06-tasks/
-├── 07-prompts/
+├── standard-sdd/
+│   ├── 01-requirements/
+│   ├── 02-user-stories/
+│   ├── 03-spec/
+│   ├── 04-architecture/
+│   ├── 05-design/
+│   │   └── contracts/
+│   └── 06-tasks/
 └── ibm-i/
     ├── 01-requirement-normalizer/
     ├── 02-functional-spec/

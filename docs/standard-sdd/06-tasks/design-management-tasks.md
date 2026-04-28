@@ -72,7 +72,7 @@ Deliver the Design Management slice end-to-end in two phases: Phase A (frontend 
 - [ ] `src/features/design-management/mock/aiSummary.mock.ts` — SUCCESS for 2 artifacts, PENDING for 1, FAILED with retry for 1
 - [ ] `src/features/design-management/mock/changeLog.mock.ts` — 20 entries covering all 7 entry types (REGISTERED, VERSION_PUBLISHED, SPEC_LINKED, SPEC_UNLINKED, RETIRED, AI_SUMMARY_REGENERATED, LIFECYCLE_TRANSITIONED)
 - [ ] `src/features/design-management/mock/traceabilityMatrix.mock.ts` — ~30 specs × ~14 artifacts; deliberately sparse with clustered gaps
-- [ ] `src/features/design-management/mock/htmlPayloads/` — 3 canned Stitch HTML files (copy-pasted from `docs/05-design/*.html`) served through the mock as `/artifacts/:id/raw`
+- [ ] `src/features/design-management/mock/htmlPayloads/` — 3 canned Stitch HTML files (copy-pasted from `docs/standard-sdd/05-design/*.html`) served through the mock as `/artifacts/:id/raw`
 - [ ] Mock command layer: `src/features/design-management/mock/commandLoop.ts` — simulates:
   - `prevVersionId` mismatch → `DM_STALE_VERSION` (5% injected)
   - `__PII_TRIGGER__` sentinel in uploaded HTML → `DM_PII_DETECTED`
@@ -460,7 +460,7 @@ B0 (shared backend) → B1 (package) → B2 (DTOs)
 | Risk                                                                             | Mitigation                                                                                                                                                                                    |
 | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `SpecRevisionLookup` facade not yet implemented in Requirement slice           | Stub in `com.sdlctower.shared.integration.requirement` returning static lookup; flag as upstream blocker; document cutover plan                                                             |
-| CSP on `/raw` too restrictive, breaks Stitch HTML rendering                    | Seed data includes the exact HTML files from `docs/05-design/*.html`; CI verifies they render under the configured CSP without violations; extending allowlist requires platform review     |
+| CSP on `/raw` too restrictive, breaks Stitch HTML rendering                    | Seed data includes the exact HTML files from `docs/standard-sdd/05-design/*.html`; CI verifies they render under the configured CSP without violations; extending allowlist requires platform review     |
 | CSP too permissive allowing third-party origins to exfiltrate                    | Allowlist is locked to the three CDN origins the internal mocks currently use (cdn.tailwindcss.com, fonts.googleapis.com, fonts.gstatic.com); adding a new origin is a platform-review change |
 | 2 MiB limit bypassed if `html_size_bytes` is client-reported                   | Server recomputes size from the uploaded bytes before the CHECK constraint fires; client value is advisory only                                                                               |
 | PII scanner false positives on legitimate HTML (e.g. mailto links in footer)     | PII scanner takes the sample + offset, returns structured `PiiMatch`; admin sees WHICH pattern matched WHERE; explicit override requires a platform approval (out of scope for V1)          |

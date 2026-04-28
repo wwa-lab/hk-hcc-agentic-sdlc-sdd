@@ -33,10 +33,10 @@ be implemented in subsequent slices.
 
 The current Stitch-generated exploration files are:
 
-- [Control Tower.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Control%20Tower.html:1)
-- [Project Space.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Project%20Space.html:1)
-- [Incident Command Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Incident%20Command%20Center.html:1)
-- [Platform Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Platform%20Center.html:1)
+- [Control Tower.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Control%20Tower.html:1)
+- [Project Space.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Project%20Space.html:1)
+- [Incident Command Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Incident%20Command%20Center.html:1)
+- [Platform Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Platform%20Center.html:1)
 
 These files should be treated as exploratory UI artifacts, not yet as final design source of truth.
 
@@ -44,19 +44,19 @@ These files should be treated as exploratory UI artifacts, not yet as final desi
 
 Primary source:
 
-- [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:1)
+- [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:1)
 
 Key source anchors:
 
-- information architecture: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:229)
-- page definitions: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:252)
-- frontend experience principles: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:457)
-- workspace and context model: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:149)
-- skill execution model: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:425)
+- information architecture: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:229)
+- page definitions: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:252)
+- frontend experience principles: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:457)
+- workspace and context model: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:149)
+- skill execution model: [agentic_sdlc_control_tower_prd_v0.9.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md:425)
 
 Supporting brief:
 
-- [stitch-brief.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/stitch-brief.md:1)
+- [stitch-brief.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/stitch-brief.md:1)
 
 ## Design Assumptions
 
@@ -165,7 +165,7 @@ Landing page for value demonstration and operational overview.
 
 #### Current Prototype Reference
 
-- [Control Tower.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Control%20Tower.html:1)
+- [Control Tower.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Control%20Tower.html:1)
 
 ### Project Space
 
@@ -200,7 +200,7 @@ Bridge organizational visibility and project execution.
 
 #### Current Prototype Reference
 
-- [Project Space.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Project%20Space.html:1)
+- [Project Space.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Project%20Space.html:1)
 
 ### Incident Management
 
@@ -245,7 +245,7 @@ AI-native operations command center.
 
 #### Current Prototype Reference
 
-- [Incident Command Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Incident%20Command%20Center.html:1)
+- [Incident Command Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Incident%20Command%20Center.html:1)
 
 ### Platform Center
 
@@ -277,7 +277,7 @@ Governance and platform capability hub.
 
 #### Current Prototype Reference
 
-- [Platform Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/05-design/Platform%20Center.html:1)
+- [Platform Center.html](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/Platform%20Center.html:1)
 
 ### Round 2 Candidate Modules
 
