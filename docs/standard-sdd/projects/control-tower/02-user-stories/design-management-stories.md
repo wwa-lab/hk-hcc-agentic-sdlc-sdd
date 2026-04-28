@@ -16,7 +16,7 @@ Stories are grouped by view:
 - Requirements: [design-management-requirements.md](../01-requirements/design-management-requirements.md)
 - PRD: [agentic_sdlc_control_tower_prd_v0.9.md](../01-requirements/agentic_sdlc_control_tower_prd_v0.9.md) §11.6, §11.4, §13, §15, §16, §18.2
 - Cross-slice refs: [requirement-stories.md](requirement-stories.md), [project-space-stories.md](project-space-stories.md), [project-management-stories.md](project-management-stories.md), [shared-app-shell-stories.md](shared-app-shell-stories.md)
-- Visual reference: registered HTML mocks in `docs/standard-sdd/05-design/` (Control Tower.html, Incident Command Center.html, Platform Center.html, Project Space.html); design system at [../05-design/design.md](../05-design/design.md)
+- Visual reference: registered HTML mocks in `docs/standard-sdd/projects/control-tower/05-design/` (Control Tower.html, Incident Command Center.html, Platform Center.html, Project Space.html); design system at [../05-design/design.md](../05-design/design.md)
 
 ---
 
@@ -414,7 +414,7 @@ so that the artifact becomes browsable in the catalog.
 #### Acceptance Criteria
 
 - A "Register artifact" CTA is available to `WORKSPACE_ADMIN` from the Catalog summary bar
-- The registration form collects: title, kind (`PAGE_MOCK` / `COMPONENT_MOCK` / `FLOW_MOCK` / `STATE_MOCK`), owning Project, authors, lifecycle stage (default `DRAFT`), HTML payload (inline or via reference to a `docs/standard-sdd/05-design/*.html` path), initial linked Spec IDs (optional)
+- The registration form collects: title, kind (`PAGE_MOCK` / `COMPONENT_MOCK` / `FLOW_MOCK` / `STATE_MOCK`), owning Project, authors, lifecycle stage (default `DRAFT`), HTML payload (inline or via reference to a `docs/standard-sdd/projects/control-tower/05-design/*.html` path), initial linked Spec IDs (optional)
 - On submit, the backend validates: HTML size ≤ 2 MB, no PII patterns (REQ-DM-53), caller role, Project ownership, Spec visibility
 - On success, a new `DesignArtifact` + initial `DesignArtifactVersion` (v1) are created, a `REGISTERED` change-log entry is written, and the catalog refreshes
 - AI summary generation is triggered asynchronously; the catalog row shows "AI Summary pending" until ready
@@ -422,7 +422,7 @@ so that the artifact becomes browsable in the catalog.
 #### Edge Notes
 
 - PII rejection is hard (blocked), not soft (sanitized) — the admin must remove PII from the HTML before retrying
-- V1 supports inline payload and `docs/standard-sdd/05-design/*.html` path references; arbitrary URL upload is not V1
+- V1 supports inline payload and `docs/standard-sdd/projects/control-tower/05-design/*.html` path references; arbitrary URL upload is not V1
 - Attempting to register an artifact that already exists (same title + Project + kind + authors) prompts "This looks like a duplicate" with an option to publish a new version instead
 
 #### Requirement Refs

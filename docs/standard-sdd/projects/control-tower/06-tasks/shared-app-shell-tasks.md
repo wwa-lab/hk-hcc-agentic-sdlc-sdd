@@ -20,10 +20,10 @@ Phase B adds the backend and replaces mocked data with real API calls.
 
 ## Traceability
 
-- Stories: [shared-app-shell-stories.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/02-user-stories/shared-app-shell-stories.md:1)
-- Spec: [shared-app-shell-spec.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/03-spec/shared-app-shell-spec.md:1)
-- Architecture: [shared-app-shell-architecture.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/04-architecture/shared-app-shell-architecture.md:1)
-- Design reference: [design.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/05-design/design.md:82)
+- Stories: [shared-app-shell-stories.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/projects/control-tower/02-user-stories/shared-app-shell-stories.md:1)
+- Spec: [shared-app-shell-spec.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/projects/control-tower/03-spec/shared-app-shell-spec.md:1)
+- Architecture: [shared-app-shell-architecture.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/projects/control-tower/04-architecture/shared-app-shell-architecture.md:1)
+- Design reference: [design.md](/Users/leo/wwa-lab/GitHub/Agentic-SDLC-Control-Tower/docs/standard-sdd/projects/control-tower/05-design/design.md:82)
 
 ---
 

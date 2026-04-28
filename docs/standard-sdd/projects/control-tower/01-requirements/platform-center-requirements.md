@@ -381,7 +381,7 @@ This differs from the single-scroll card layouts used by Dashboard or AI Center 
 
 All sub-sections must use the tokens, typography, and status colors from the shared design system (`visual-design-system.md`). Status badges (`active` / `draft` / `deprecated` / `error`) reuse the shared OK / Warning / Critical palette.
 
-> Source: `visual-design-system.md` §2, `docs/standard-sdd/05-design/design.md`
+> Source: `visual-design-system.md` §2, `docs/standard-sdd/projects/control-tower/05-design/design.md`
 
 ### REQ-PC-72: States
 
@@ -504,7 +504,7 @@ All mutating Platform Center endpoints must emit an audit record **as part of th
 | REQ-PC-63 | §12.6 |
 | REQ-PC-64 | §12.6 |
 | REQ-PC-70 | §15.3 |
-| REQ-PC-71 | `visual-design-system.md` §2, `docs/standard-sdd/05-design/design.md` |
+| REQ-PC-71 | `visual-design-system.md` §2, `docs/standard-sdd/projects/control-tower/05-design/design.md` |
 | REQ-PC-72 | — (UX-derived) |
 | REQ-PC-73 | §16.3 |
 | REQ-PC-80 | CLAUDE.md Lesson #2; slice decision |

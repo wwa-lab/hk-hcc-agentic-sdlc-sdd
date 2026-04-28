@@ -532,4 +532,4 @@ graph LR
 
 - `VITE_USE_BACKEND=true` switches the API client from mocks to live backend; no call-site changes.
 - Phase A mocks simulate `DM_STALE_VERSION` (5% injection), `DM_PII_DETECTED` (via `__PII_TRIGGER__` string), and AI summary pending → ready transitions (3s simulated delay).
-- Phase A Viewer renders the actual HTML files in `docs/standard-sdd/05-design/*.html` as preview content by mapping seed artifact IDs to file paths. This gives the UI a realistic first impression before the backend lands.
+- Phase A Viewer renders the actual HTML files in `docs/standard-sdd/projects/control-tower/05-design/*.html` as preview content by mapping seed artifact IDs to file paths. This gives the UI a realistic first impression before the backend lands.

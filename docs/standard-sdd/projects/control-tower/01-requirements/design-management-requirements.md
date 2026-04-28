@@ -9,7 +9,7 @@ Design Management is the **design traceability plane**. Where Requirement Manage
 Per the 2026-04-17 scope decision, V1 is intentionally **lightweight** (PRD §18.2 — "可轻量化上线"):
 
 - Read-only design artifact viewer
-- Integrates with internal Stitch-authored HTML mocks already present under `docs/standard-sdd/05-design/*.html`
+- Integrates with internal Stitch-authored HTML mocks already present under `docs/standard-sdd/projects/control-tower/05-design/*.html`
 - Primary user flow: **Spec → Design traceability** (start from a Requirement/Spec, see the designs that claim to cover it, verify coverage)
 - AI scope: summary + traceability only (no critique, no generation)
 
@@ -20,7 +20,7 @@ Editing, review workflow, design tokens management, component library catalog, A
 All requirements below are derived from:
 
 - [agentic_sdlc_control_tower_prd_v0.9.md](agentic_sdlc_control_tower_prd_v0.9.md) — §11.6, §11.4, §13, §15, §16, §18.2
-- Visual reference: the internal Stitch-authored HTML mocks in `docs/standard-sdd/05-design/` — [Control Tower.html](../05-design/Control%20Tower.html), [Incident Command Center.html](../05-design/Incident%20Command%20Center.html), [Platform Center.html](../05-design/Platform%20Center.html), [Project Space.html](../05-design/Project%20Space.html), plus [design.md](../05-design/design.md) (product-level visual system) and [stitch-brief.md](../05-design/stitch-brief.md)
+- Visual reference: the internal Stitch-authored HTML mocks in `docs/standard-sdd/projects/control-tower/05-design/` — [Control Tower.html](../05-design/Control%20Tower.html), [Incident Command Center.html](../05-design/Incident%20Command%20Center.html), [Platform Center.html](../05-design/Platform%20Center.html), [Project Space.html](../05-design/Project%20Space.html), plus [design.md](../05-design/design.md) (product-level visual system) and [stitch-brief.md](../05-design/stitch-brief.md)
 - Cross-slice references: [requirement-requirements.md](requirement-requirements.md), [project-space-requirements.md](project-space-requirements.md), [project-management-requirements.md](project-management-requirements.md), [shared-app-shell-requirements.md](shared-app-shell-requirements.md)
 
 Section references use the format `PRD §N.N`.

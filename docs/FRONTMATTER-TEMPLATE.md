@@ -14,6 +14,7 @@ title: "{Document Title}"
 owner: "wwa-lab"
 profile: "standard-sdd"
 application_id: "agentic-sdlc-control-tower"
+project_id: "control-tower"
 snow_group: null
 requirement_id: null
 source_refs: []
@@ -47,6 +48,7 @@ title: "{BR-ID} Functional Spec"
 owner: "hk-hcc"
 profile: "ibm-i"
 application_id: "hk-hcc"
+project_id: "hk-hcc-core"
 snow_group: "HK-HCC"
 requirement_id: "{BR-ID}"
 source_refs: []

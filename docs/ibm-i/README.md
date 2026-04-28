@@ -6,19 +6,22 @@ Use `profile: "ibm-i"` in every graph-participating document. The knowledge
 graph sync validates IBM i documents with the IBM i document type chain and
 dependency rules.
 
+IBM i projects live under `projects/{project-id}/`.
+
 ## Document Chain
 
 ```text
-01-requirement-normalizer/
-02-functional-spec/
-03-technical-design/
-04-program-spec/
-05-file-spec/
-06-ut-plan/
-07-test-scaffold/
-08-spec-review/
-09-dds-review/
-10-code-review/
+projects/{project-id}/
+├── 01-requirement-normalizer/
+├── 02-functional-spec/
+├── 03-technical-design/
+├── 04-program-spec/
+├── 05-file-spec/
+├── 06-ut-plan/
+├── 07-test-scaffold/
+├── 08-spec-review/
+├── 09-dds-review/
+└── 10-code-review/
 ```
 
 ## Document Types
@@ -47,6 +50,7 @@ title: "BR-001 Functional Spec"
 owner: "hk-hcc"
 profile: "ibm-i"
 application_id: "hk-hcc"
+project_id: "hk-hcc-core"
 snow_group: "HK-HCC"
 requirement_id: "BR-001"
 source_refs: []
@@ -72,5 +76,7 @@ entities:
 Run the structured sync with the IBM i profile:
 
 ```bash
-npm run sync -- --source ../hk-hcc-agentic-sdlc-sdd --profile ibm-i --workspace ws-default-001 --application hk-hcc --snow-group HK-HCC
+npm run sync:ibm-i
 ```
+
+The current baseline IBM i project is `hk-hcc-core`.

@@ -190,7 +190,7 @@ Prefer small, composable contracts over a large orchestration framework. Build t
 
 ### 1. Search the full project before assuming file locations
 
-**What happened:** When creating the Gemini prompt, I only referenced `docs/standard-sdd/05-design/design.md` (product module design) and missed `docs/standard-sdd/05-design/visual-design-system.md` (visual design system). The user had to correct me twice.
+**What happened:** When creating the Gemini prompt, I only referenced `docs/standard-sdd/projects/control-tower/05-design/design.md` (product module design) and missed `docs/standard-sdd/projects/control-tower/05-design/visual-design-system.md` (visual design system). The user had to correct me twice.
 
 **Rule:** Before referencing any document, always `Glob` for all matching files across the entire project. Do not assume a file only exists in one location. Ask if ambiguous.
 
@@ -220,7 +220,7 @@ Prefer small, composable contracts over a large orchestration framework. Build t
 
 ### 6. Every SDD slice must produce a complete 6-doc set
 
-**What happened:** The shared-app-shell slice was missing a per-slice requirements doc (`standard-sdd/01-requirements/shared-app-shell-requirements.md`) and a per-slice design doc (`standard-sdd/05-design/shared-app-shell-design.md`). The product-level `design.md` existed but it covers all modules, not just the shell. The user had to ask why these were missing.
+**What happened:** The shared-app-shell slice was missing a per-slice requirements doc (`standard-sdd/projects/control-tower/01-requirements/shared-app-shell-requirements.md`) and a per-slice design doc (`standard-sdd/projects/control-tower/05-design/shared-app-shell-design.md`). The product-level `design.md` existed but it covers all modules, not just the shell. The user had to ask why these were missing.
 
 **Rule:** When executing the SDD pipeline for any slice, always produce or verify **all 9 documents** (6 core + 3 supplementary):
 
@@ -228,20 +228,20 @@ Prefer small, composable contracts over a large orchestration framework. Build t
 
 | # | Stage | File pattern | Content |
 |---|-------|-------------|---------|
-| 1 | Requirements | `standard-sdd/01-requirements/{slice}-requirements.md` | Requirements extracted from PRD with REQ-IDs and PRD section refs |
-| 2 | User Stories | `standard-sdd/02-user-stories/{slice}-stories.md` | Agile stories with acceptance criteria |
-| 3 | Spec | `standard-sdd/03-spec/{slice}-spec.md` | Implementation-facing contracts |
-| 4 | Architecture | `standard-sdd/04-architecture/{slice}-architecture.md` | System context, components, data flow, state, integration |
-| 5 | Design | `standard-sdd/05-design/{slice}-design.md` | Concrete APIs, file structure, data model, visual decisions, DB schema |
-| 6 | Tasks | `standard-sdd/06-tasks/{slice}-tasks.md` | Phased implementation breakdown |
+| 1 | Requirements | `standard-sdd/projects/control-tower/01-requirements/{slice}-requirements.md` | Requirements extracted from PRD with REQ-IDs and PRD section refs |
+| 2 | User Stories | `standard-sdd/projects/control-tower/02-user-stories/{slice}-stories.md` | Agile stories with acceptance criteria |
+| 3 | Spec | `standard-sdd/projects/control-tower/03-spec/{slice}-spec.md` | Implementation-facing contracts |
+| 4 | Architecture | `standard-sdd/projects/control-tower/04-architecture/{slice}-architecture.md` | System context, components, data flow, state, integration |
+| 5 | Design | `standard-sdd/projects/control-tower/05-design/{slice}-design.md` | Concrete APIs, file structure, data model, visual decisions, DB schema |
+| 6 | Tasks | `standard-sdd/projects/control-tower/06-tasks/{slice}-tasks.md` | Phased implementation breakdown |
 
 **Supplementary Artifacts (3):**
 
 | # | Stage | File pattern | Content |
 |---|-------|-------------|---------|
-| 7 | Data Flow | `standard-sdd/04-architecture/{slice}-data-flow.md` | Runtime data flows, sequence diagrams, state machines, error cascade, refresh strategy |
-| 8 | Data Model | `standard-sdd/04-architecture/{slice}-data-model.md` | Domain model ER diagram, frontend types, backend DTOs/entities, DB schema DDL, type mapping |
-| 9 | API Guide | `standard-sdd/05-design/contracts/{slice}-API_IMPLEMENTATION_GUIDE.md` | Full endpoint contracts with JSON examples, backend/frontend implementation guide, testing contracts |
+| 7 | Data Flow | `standard-sdd/projects/control-tower/04-architecture/{slice}-data-flow.md` | Runtime data flows, sequence diagrams, state machines, error cascade, refresh strategy |
+| 8 | Data Model | `standard-sdd/projects/control-tower/04-architecture/{slice}-data-model.md` | Domain model ER diagram, frontend types, backend DTOs/entities, DB schema DDL, type mapping |
+| 9 | API Guide | `standard-sdd/projects/control-tower/05-design/contracts/{slice}-API_IMPLEMENTATION_GUIDE.md` | Full endpoint contracts with JSON examples, backend/frontend implementation guide, testing contracts |
 
 Before starting any implementation work, check that all 9 docs exist for the current slice. If any are missing, create them first. Do not start coding with an incomplete doc set.
 

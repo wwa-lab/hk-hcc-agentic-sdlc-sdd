@@ -399,7 +399,7 @@ V1 ships as a lightweight viewer. The only write paths are administrative: regis
 
 ### D2: Stitch / internal HTML is the only artifact source in V1
 
-V1 does not integrate with Figma or other external design tools and does not accept arbitrary image/PDF uploads. Registration accepts either an inline HTML payload or a reference to a `docs/standard-sdd/05-design/*.html` path. Any other source is out of scope.
+V1 does not integrate with Figma or other external design tools and does not accept arbitrary image/PDF uploads. Registration accepts either an inline HTML payload or a reference to a `docs/standard-sdd/projects/control-tower/05-design/*.html` path. Any other source is out of scope.
 
 > REQ-DM-07, product decision 2026-04-17
 
@@ -423,7 +423,7 @@ Only four net-new entities: `DesignArtifact`, `DesignArtifactVersion`, `DesignSp
 
 ### D6: Sandbox is conservative
 
-Preview iframes use a default CSP that blocks inline scripts and restricts network origins. Per-artifact CSP relaxation is not V1. The Stitch mocks in `docs/standard-sdd/05-design/` currently reference `cdn.tailwindcss.com` and `fonts.googleapis.com`; the default CSP explicitly allows these.
+Preview iframes use a default CSP that blocks inline scripts and restricts network origins. Per-artifact CSP relaxation is not V1. The Stitch mocks in `docs/standard-sdd/projects/control-tower/05-design/` currently reference `cdn.tailwindcss.com` and `fonts.googleapis.com`; the default CSP explicitly allows these.
 
 > REQ-DM-20, product decision 2026-04-17
 

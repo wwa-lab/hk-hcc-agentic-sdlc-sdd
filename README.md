@@ -22,33 +22,38 @@ Supported profiles:
 - `ibm-i`: IBM i delivery chain with RPG/CL/DDS-oriented artifacts and review
   gates.
 
-Use `docs/standard-sdd/` for the generic SDD profile and `docs/ibm-i/` for IBM
-i work. Every graph-participating document should set the matching `profile`
-value in front matter.
+Use `docs/standard-sdd/projects/{project-id}/` for generic SDD projects and
+`docs/ibm-i/projects/{project-id}/` for IBM i projects. Every
+graph-participating document should set the matching `profile` and `project_id`
+values in front matter.
 
 ## Layout
 
 ```text
 docs/
 ├── standard-sdd/
-│   ├── 01-requirements/
-│   ├── 02-user-stories/
-│   ├── 03-spec/
-│   ├── 04-architecture/
-│   ├── 05-design/
-│   │   └── contracts/
-│   └── 06-tasks/
+│   └── projects/
+│       └── control-tower/
+│           ├── 01-requirements/
+│           ├── 02-user-stories/
+│           ├── 03-spec/
+│           ├── 04-architecture/
+│           ├── 05-design/
+│           │   └── contracts/
+│           └── 06-tasks/
 └── ibm-i/
-    ├── 01-requirement-normalizer/
-    ├── 02-functional-spec/
-    ├── 03-technical-design/
-    ├── 04-program-spec/
-    ├── 05-file-spec/
-    ├── 06-ut-plan/
-    ├── 07-test-scaffold/
-    ├── 08-spec-review/
-    ├── 09-dds-review/
-    └── 10-code-review/
+    └── projects/
+        └── hk-hcc-core/
+            ├── 01-requirement-normalizer/
+            ├── 02-functional-spec/
+            ├── 03-technical-design/
+            ├── 04-program-spec/
+            ├── 05-file-spec/
+            ├── 06-ut-plan/
+            ├── 07-test-scaffold/
+            ├── 08-spec-review/
+            ├── 09-dds-review/
+            └── 10-code-review/
 ```
 
 The docs root intentionally avoids generic `00-context` and `07-prompts`
@@ -72,6 +77,12 @@ document set before coding starts:
 
 For IBM i, use the staged chain under `docs/ibm-i/README.md`.
 
+To add a new project, create a sibling folder under the relevant profile:
+
+```text
+docs/{profile}/projects/{project-id}/
+```
+
 ## Graph Metadata
 
 Graph-participating documents should start with YAML front matter. Standard SDD
@@ -86,6 +97,7 @@ title: "SDD Knowledge Graph Requirements"
 owner: "wwa-lab"
 profile: "standard-sdd"
 application_id: "agentic-sdlc-control-tower"
+project_id: "control-tower"
 snow_group: null
 requirement_id: "SKG"
 source_refs: []
@@ -107,6 +119,7 @@ title: "BR-001 Functional Spec"
 owner: "hk-hcc"
 profile: "ibm-i"
 application_id: "hk-hcc"
+project_id: "hk-hcc-core"
 snow_group: "HK-HCC"
 requirement_id: "BR-001"
 source_refs: []
@@ -139,6 +152,7 @@ Recommended fields are:
 
 - `sdd_version`
 - `application_id`
+- `project_id`
 - `snow_group`
 - `requirement_id`
 - `source_refs`
@@ -164,13 +178,19 @@ The structured graph repository is generated from this repo. A typical local
 sync command is run from the structured data repository:
 
 ```bash
-npm run sync -- --source ../hk-hcc-agentic-sdlc-sdd --workspace ws-default-001 --application agentic-sdlc-control-tower
+npm run sync -- --source ../hk-hcc-agentic-sdlc-sdd/docs/{profile}/projects/{project-id} --profile {profile} --workspace ws-default-001 --application {application-id} --project {project-id}
 ```
 
-For IBM i graph validation, pass the IBM i profile:
+For a single Standard SDD project:
 
 ```bash
-npm run sync -- --source ../hk-hcc-agentic-sdlc-sdd --profile ibm-i --workspace ws-default-001 --application hk-hcc --snow-group HK-HCC
+npm run sync:sdd
+```
+
+For IBM i graph validation:
+
+```bash
+npm run sync:ibm-i
 ```
 
 The generated repository owns `_graph/` artifacts and Neo4j ingestion inputs.

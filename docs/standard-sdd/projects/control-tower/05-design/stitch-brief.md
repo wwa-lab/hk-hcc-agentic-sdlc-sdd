@@ -5,8 +5,8 @@
 This document is a ready-to-use brief for generating the first-round frontend design in Stitch.
 It is derived from:
 
-- `docs/standard-sdd/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md`
-- `docs/standard-sdd/05-design/README.md`
+- `docs/standard-sdd/projects/control-tower/01-requirements/agentic_sdlc_control_tower_prd_v0.9.md`
+- `docs/standard-sdd/projects/control-tower/05-design/README.md`
 
 The goal is to generate a desktop-first enterprise SaaS UI direction for an AI-native SDLC control tower, with outputs that can be translated into a Vue 3 application.
 
@@ -478,7 +478,7 @@ Please output:
 
 After receiving the first design output:
 
-1. save the accepted design direction into `docs/standard-sdd/05-design/design.md`
+1. save the accepted design direction into `docs/standard-sdd/projects/control-tower/05-design/design.md`
 2. normalize page names, modules, and component vocabulary
-3. convert approved design into `docs/standard-sdd/06-tasks/tasks.md`
+3. convert approved design into `docs/standard-sdd/projects/control-tower/06-tasks/tasks.md`
 4. then start Vue 3 implementation page by page

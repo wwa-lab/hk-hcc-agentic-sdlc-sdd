@@ -422,7 +422,7 @@ Detailed sequences (Phase A mocked, Phase B backend, error cascade, state machin
 
 ### 7.1 Sandbox
 
-The preview endpoint serves the artifact HTML with a conservative default CSP (see spec §B7). Inline scripts are blocked by default. The only allowed external origins are `cdn.tailwindcss.com`, `fonts.googleapis.com`, `fonts.gstatic.com` — reflecting what the existing Stitch mocks under `docs/standard-sdd/05-design/` already reference. `X-Frame-Options: SAMEORIGIN` prevents the artifact from being embedded outside the control tower origin.
+The preview endpoint serves the artifact HTML with a conservative default CSP (see spec §B7). Inline scripts are blocked by default. The only allowed external origins are `cdn.tailwindcss.com`, `fonts.googleapis.com`, `fonts.gstatic.com` — reflecting what the existing Stitch mocks under `docs/standard-sdd/projects/control-tower/05-design/` already reference. `X-Frame-Options: SAMEORIGIN` prevents the artifact from being embedded outside the control tower origin.
 
 The Viewer's `<iframe>` omits `allow-top-navigation` and `allow-popups-to-escape-sandbox`; it includes `allow-scripts` only (no `allow-same-origin` by default). Mocks that require same-origin behavior must be re-authored to avoid that dependency, or registered with a deprecation note.
 

@@ -506,7 +506,7 @@ Request:
 ```
 
 - Exactly one of `htmlPayload` or `htmlPath` must be present.
-- `htmlPath` must reference a file under `docs/standard-sdd/05-design/*.html`.
+- `htmlPath` must reference a file under `docs/standard-sdd/projects/control-tower/05-design/*.html`.
 
 Response `201`:
 

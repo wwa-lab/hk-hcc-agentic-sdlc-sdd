@@ -15,11 +15,11 @@ slice with the platform design principles in `CLAUDE.md`.
 ## Sources
 
 - `CLAUDE.md` — Platform Design Principles
-- `docs/standard-sdd/01-requirements/requirement-requirements.md`
-- `docs/standard-sdd/03-spec/requirement-spec.md`
-- `docs/standard-sdd/04-architecture/requirement-architecture.md`
-- `docs/standard-sdd/04-architecture/requirement-data-model.md`
-- `docs/standard-sdd/05-design/requirement-design.md`
+- `docs/standard-sdd/projects/control-tower/01-requirements/requirement-requirements.md`
+- `docs/standard-sdd/projects/control-tower/03-spec/requirement-spec.md`
+- `docs/standard-sdd/projects/control-tower/04-architecture/requirement-architecture.md`
+- `docs/standard-sdd/projects/control-tower/04-architecture/requirement-data-model.md`
+- `docs/standard-sdd/projects/control-tower/05-design/requirement-design.md`
 - IBM i skill family: `wwa-lab/build-agent-skill`
 
 ## 1. Scope
