@@ -1,4 +1,4 @@
-# Agentic SDLC SDD Repository
+# HK-HCC Agentic SDLC SDD Repository
 
 This repository is the canonical source of truth for human-readable Spec Driven
 Development documents for Agentic SDLC Control Tower.
@@ -73,7 +73,7 @@ The structured graph repository is generated from this repo. A typical local
 sync command is run from the structured data repository:
 
 ```bash
-npm run sync -- --source ../agentic-sdlc-sdd --workspace ws-default-001 --application agentic-sdlc-control-tower
+npm run sync -- --source ../hk-hcc-agentic-sdlc-sdd --workspace ws-default-001 --application agentic-sdlc-control-tower
 ```
 
 The generated repository owns `_graph/` artifacts and Neo4j ingestion inputs.
