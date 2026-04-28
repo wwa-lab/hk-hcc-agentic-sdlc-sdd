@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incident Management | SDLC Tower</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-fixed": "#c9e6ff",
+                        "secondary-container": "#00a2e6",
+                        "on-error": "#690005",
+                        "inverse-primary": "#565e74",
+                        "surface": "#0b1326",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "on-primary": "#283044",
+                        "on-secondary-container": "#00344e",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#0f172a",
+                        "outline-variant": "#45464d",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary-container": "#009365",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2d3449",
+                        "background": "#0b1326",
+                        "surface-container-low": "#131b2e",
+                        "primary": "#bec6e0",
+                        "surface-container-lowest": "#060e20",
+                        "secondary": "#89ceff",
+                        "primary-fixed": "#dae2fd",
+                        "error-container": "#93000a",
+                        "on-background": "#dae2fd",
+                        "surface-tint": "#bec6e0",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-container": "#798098",
+                        "surface-bright": "#31394d",
+                        "inverse-surface": "#dae2fd",
+                        "on-tertiary": "#003824",
+                        "on-surface": "#dae2fd",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary": "#4edea3",
+                        "outline": "#909097",
+                        "on-secondary": "#00344d",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-container": "#001c10",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-fixed-dim": "#89ceff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-high": "#222a3d",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-secondary-fixed": "#001e2f",
+                        "surface-dim": "#0b1326",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container": "#171f33",
+                        "on-surface-variant": "#c6c6cd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            transition: background-color 0.2s ease;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(137, 206, 255, 0.2);
+        }
+        .technical-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary/30">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full overflow-y-auto flex flex-col w-64 bg-slate-900 border-r border-slate-800 z-[60]">
+<div class="p-4 border-b border-slate-800">
+<h1 class="text-lg font-black tracking-tighter text-blue-100">SDLC Tower</h1>
+<p class="font-mono text-[11px] text-blue-400 uppercase tracking-widest">Agentic SDLC Control Tower</p>
+</div>
+<nav class="flex-1 py-4">
+<div class="space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<!-- Incident Management (Active) -->
+<a class="flex items-center px-4 py-2 text-blue-400 bg-slate-800/50 border-l-2 border-blue-500 font-bold font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="emergency_home">emergency_home</span>
+                    Incident Management
+                </a>
+<!-- Other Items -->
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="groups">groups</span>
+                    Team Space
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="inventory_2">inventory_2</span>
+                    Project Space
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="assignment_late">assignment_late</span>
+                    Requirement Management
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="account_tree">account_tree</span>
+                    Project Management
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="draw">draw</span>
+                    Design Management
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="terminal">terminal</span>
+                    Code &amp; Build
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="biotech">biotech</span>
+                    Testing
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="rocket_launch">rocket_launch</span>
+                    Deployment
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="psychology">psychology</span>
+                    AI Center
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="analytics">analytics</span>
+                    Report Center
+                </a>
+<a class="flex items-center px-4 py-2 text-slate-500 hover:text-slate-300 hover:bg-slate-800/30 transition-colors duration-150 font-inter text-[12px] uppercase tracking-wider" href="#">
+<span aria-hidden="true" class="material-symbols-outlined mr-3 text-lg" data-icon="admin_panel_settings">admin_panel_settings</span>
+                    Platform Center
+                </a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-800 bg-slate-950/50">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-sm bg-blue-900 flex items-center justify-center overflow-hidden">
+<img alt="Systems administrator profile" class="w-full h-full object-cover" data-alt="close up profile portrait of a systems administrator in a dark tech room with soft blue key light" height="32" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdrYclmXc3Uy5FKsQLooT_R_A7gGA1TRq7_Vdm1RttzOKIaygIrDlOW5iixGr7yLX7k6aAWBPzQDUkoIbB9VHkn8NGP72nppAF2N6wIGeAT5WzJqPykFHi733PCkZPq5PMmwR8YgNfYqT_XgufCYeZ6FAhs-tPa1iUpfy4th8R1H3eZwaQD3gC3d_KkIsPnENEn5vouZfAIqmLgz2GppZ5B7m-yX8koZDyPHVLBqZbuoeLNnxslTcpbAfByO0MrmB94EIEV4wTeTM" width="32"/>
+</div>
+<div>
+<p class="text-[10px] technical-mono text-slate-400">ADMIN_SYS_01</p>
+<p class="text-[11px] font-bold text-slate-200">OPERATOR_ID: 9942</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-12 flex items-center px-4 z-50 justify-between bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-inner shadow-blue-900/10">
+<div class="flex items-center space-x-6">
+<span class="text-sm font-bold text-blue-200 tracking-tight">SDLC Tower</span>
+<div class="hidden xl:flex items-center gap-2 font-mono text-[10px] uppercase tracking-wide text-slate-400">
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Workspace</span>
+<span class="text-blue-300">GLOBAL_OPS</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Application</span>
+<span class="text-blue-300">CORE_BANKING</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">SNOW Group</span>
+<span class="text-blue-300">SNOW_WEST_04</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Project</span>
+<span class="text-blue-300">QUANTUM_MESH</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Environment</span>
+<span class="text-blue-300">STAGING_1</span>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button aria-label="Search incidents" class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" data-icon="search" type="button">search</button>
+<button aria-label="View notifications" class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" data-icon="notifications" type="button">notifications</button>
+<button aria-label="Open audit center" class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" data-icon="history_edu" type="button">history_edu</button>
+<button aria-label="Open terminal panel" class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" data-icon="terminal" type="button">terminal</button>
+<button aria-label="Open user profile" class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" data-icon="account_circle" type="button">account_circle</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 mt-12 mr-80 p-6 min-h-screen">
+<!-- Incident Header -->
+<div class="mb-6 flex flex-col md:flex-row md:items-end justify-between bg-surface-container-low p-4 rounded-sm border-l-4 border-error">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<span class="technical-mono text-xl font-bold text-on-surface">DB_LATENCY_3941</span>
+<span class="bg-error/20 text-error px-2 py-0.5 technical-mono text-[10px] font-bold uppercase border border-error/30">Critical P1</span>
+<span class="flex items-center gap-1.5 text-tertiary-fixed-dim technical-mono text-[10px] font-bold uppercase">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_#4edea3]"></span>
+                        Active
+                    </span>
+</div>
+<div class="flex gap-4 text-on-surface-variant text-[11px] technical-mono uppercase">
+<span>Handler: Hybrid</span>
+<span class="text-slate-600">|</span>
+<span>Autonomy Level: Level 4 (High)</span>
+<span class="text-slate-600">|</span>
+<span>Control Mode: Human-in-the-Loop</span>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex gap-2">
+<button class="bg-surface-container-highest px-3 py-1.5 text-[11px] font-bold technical-mono border border-outline-variant hover:bg-surface-variant transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-low" type="button">EXPORT_LOGS</button>
+<button class="bg-primary text-on-primary px-4 py-1.5 text-[11px] font-bold technical-mono uppercase shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-low" type="button">ESCALATE_COMMAND</button>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Left Column: AI Diagnosis & Related SDLC -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- AI Diagnosis & Reasoning -->
+<section class="bg-surface-container-high p-4 rounded-sm border border-slate-800/50">
+<div class="flex items-center justify-between mb-4">
+<h3 class="label-md uppercase tracking-widest text-secondary font-bold text-[12px] flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-icon="psychology">psychology</span>
+                            AI Diagnosis &amp; Reasoning
+                        </h3>
+<span class="technical-mono text-[10px] text-on-tertiary-container bg-tertiary-container/30 px-2 py-0.5">MATCH_CONFIDENCE: 98.4%</span>
+</div>
+<div class="space-y-4">
+<div class="p-3 bg-surface-container-lowest border-l-2 border-secondary">
+<p class="text-[10px] technical-mono text-secondary-fixed-dim uppercase mb-1">Detection Logic</p>
+<p class="text-sm leading-relaxed text-on-surface-variant">Anomaly detected in <code>POST /v1/query</code> endpoint. Latency increased from 45ms to 1240ms. Correlation analysis indicates high I/O wait on primary shard <code>shard-cluster-a-01</code>.</p>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] technical-mono text-on-surface-variant uppercase">Reasoning Chain</p>
+<div class="space-y-1">
+<div class="flex gap-3 text-[12px]">
+<span class="text-secondary technical-mono font-bold">01</span>
+<p class="text-on-surface-variant italic">Tracing request path through Envoy proxy to application container…</p>
+</div>
+<div class="flex gap-3 text-[12px]">
+<span class="text-secondary technical-mono font-bold">02</span>
+<p class="text-on-surface-variant italic">Identified lock contention on table <code>idx_transaction_status</code>.</p>
+</div>
+<div class="flex gap-3 text-[12px]">
+<span class="text-secondary technical-mono font-bold">03</span>
+<p class="text-on-surface-variant italic">Root cause isolated: Inefficient SQL execution plan triggered by recent configuration deployment <code>conf-v1.4.2</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Actions Taken & Resolution -->
+<section class="bg-surface-container-high p-4 rounded-sm border border-slate-800/50">
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<div>
+<h3 class="label-md uppercase tracking-widest text-on-surface font-bold text-[12px] mb-4">AI Actions Taken</h3>
+<div class="space-y-3">
+<div class="p-3 bg-surface-container-lowest border-l-2 border-tertiary rounded-sm">
+<div class="flex justify-between items-center mb-1">
+<span class="technical-mono text-[10px] text-tertiary uppercase">Executed</span>
+<span class="technical-mono text-[10px] text-slate-500">14:02 UTC</span>
+</div>
+<p class="text-[11px] text-on-surface">Collected shard metrics, replayed slow-query traces, and generated rollback candidates from the deployment manifest.</p>
+</div>
+<div class="p-3 bg-surface-container-lowest border-l-2 border-secondary rounded-sm">
+<div class="flex justify-between items-center mb-1">
+<span class="technical-mono text-[10px] text-secondary uppercase">Prepared</span>
+<span class="technical-mono text-[10px] text-slate-500">Awaiting sign-off</span>
+</div>
+<p class="text-[11px] text-on-surface">Prepared `ROLLBACK_CONFIG` and `FLUSH_CACHE` remediation bundles with linked policy evidence and projected blast radius.</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="label-md uppercase tracking-widest text-on-surface font-bold text-[12px] mb-4">Resolution Path</h3>
+<div class="space-y-3">
+<div class="p-3 bg-surface-container-lowest rounded-sm border border-outline-variant/20">
+<p class="technical-mono text-[10px] uppercase text-slate-500 mb-1">Current Resolution</p>
+<p class="text-[11px] text-on-surface">Rollback configuration on production shards, flush stale cache, verify latency returns below 90ms, then reopen staged traffic.</p>
+</div>
+<div class="grid grid-cols-3 gap-3 text-[10px] font-mono">
+<div class="p-2 bg-surface-container-lowest rounded-sm border border-outline-variant/10">
+<p class="text-slate-500 uppercase">ETA</p>
+<p class="text-secondary mt-1">11 min</p>
+</div>
+<div class="p-2 bg-surface-container-lowest rounded-sm border border-outline-variant/10">
+<p class="text-slate-500 uppercase">Resolution Owner</p>
+<p class="text-on-surface mt-1">Hybrid</p>
+</div>
+<div class="p-2 bg-surface-container-lowest rounded-sm border border-outline-variant/10">
+<p class="text-slate-500 uppercase">Success Gate</p>
+<p class="text-tertiary mt-1">P99 &lt; 90ms</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related SDLC Chain -->
+<section class="bg-surface-container-high p-4 rounded-sm border border-slate-800/50">
+<div class="flex items-center justify-between mb-4">
+<h3 class="label-md uppercase tracking-widest text-on-surface font-bold text-[12px]">SDLC Origin Trace</h3>
+<span class="technical-mono text-[10px] uppercase text-secondary">11-stage chain</span>
+</div>
+<p class="technical-mono text-[10px] uppercase text-slate-500 mb-4">Spec remains the pivot from intake through remediation and learning.</p>
+<div class="overflow-x-auto">
+<div class="grid grid-cols-11 gap-2 min-w-[760px]">
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Requirement</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">User Story</p>
+</div>
+<div class="p-2 rounded-sm bg-secondary/10 border border-secondary/30 text-center">
+<p class="technical-mono text-[8px] uppercase text-secondary font-bold">Spec</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Architecture</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Design</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Tasks</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Code</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Test</p>
+</div>
+<div class="p-2 rounded-sm bg-error/10 border border-error/30 text-center">
+<p class="technical-mono text-[8px] uppercase text-error font-bold">Deploy</p>
+</div>
+<div class="p-2 rounded-sm bg-tertiary/10 border border-tertiary/30 text-center">
+<p class="technical-mono text-[8px] uppercase text-tertiary font-bold">Incident</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-lowest border border-slate-700 text-center">
+<p class="technical-mono text-[8px] uppercase text-slate-400">Learning</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Learning & Prevention -->
+<section class="bg-surface-container-high p-4 rounded-sm border border-slate-800/50">
+<h3 class="label-md uppercase tracking-widest text-tertiary font-bold text-[12px] mb-4 flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+                        AI Learning &amp; Prevention
+                    </h3>
+<div class="bg-surface-container-lowest p-4 border border-tertiary-fixed-dim/20">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Auto-Generated Rule: Latency Spike Detection v2.1</h4>
+<p class="text-[11px] text-on-surface-variant mt-1">Proposed architectural adjustment to Prevent Regression PR-4931.</p>
+</div>
+<span class="bg-tertiary/10 text-tertiary text-[9px] technical-mono px-2 py-1 border border-tertiary/20">PROPOSED_PATCH</span>
+</div>
+<pre class="bg-black/30 p-3 rounded text-[10px] technical-mono text-tertiary-fixed-dim overflow-x-auto">if (io_wait &gt; threshold_p99 &amp;&amp; query_type == "REINDEX") {
+    throttle_concurrency(0.5);
+    alert_operator("INDEX_CONTENTION_PREVENTED");
+}</pre>
+</div>
+</section>
+</div>
+<!-- Right Column: Governance & AI Command Panel -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Human Governance Module -->
+<section class="bg-surface-container-high p-4 rounded-sm border border-slate-800/50">
+<div class="flex items-center justify-between mb-4">
+<h3 class="label-md uppercase tracking-widest text-on-surface font-bold text-[12px]">Human Governance</h3>
+<span class="technical-mono text-[10px] text-secondary bg-secondary/10 border border-secondary/20 px-2 py-1">2 ACTIONS REQUIRING SIGN-OFF</span>
+</div>
+<div class="mb-4 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-sm">
+<div class="grid grid-cols-3 gap-3">
+<div>
+<p class="technical-mono text-[9px] uppercase text-slate-500 mb-1">Duty Owner</p>
+<p class="text-[11px] font-bold text-on-surface">Mira Patel</p>
+</div>
+<div>
+<p class="technical-mono text-[9px] uppercase text-slate-500 mb-1">Policy Basis</p>
+<p class="text-[11px] font-bold text-on-surface">P-DEP-441</p>
+</div>
+<div>
+<p class="technical-mono text-[9px] uppercase text-slate-500 mb-1">Exception Window</p>
+<p class="text-[11px] font-bold text-on-surface">15 Minutes</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mb-3">
+<p class="technical-mono text-[10px] uppercase text-slate-500">Governance Queue</p>
+<button class="text-[10px] technical-mono text-secondary hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-high" type="button">VIEW POLICY TRACE</button>
+</div>
+<div class="space-y-3">
+<!-- Action Item 1 -->
+<div class="p-3 bg-surface-container-lowest border border-outline-variant/30 rounded-sm">
+<div class="flex justify-between mb-2">
+<span class="technical-mono text-[10px] text-secondary font-bold">ROLLBACK_CONFIG</span>
+<span class="technical-mono text-[10px] text-slate-500">REQ_942</span>
+</div>
+<p class="text-[11px] text-on-surface-variant mb-4">Revert <code>conf-v1.4.2</code> to <code>conf-v1.4.1</code> on production shards.</p>
+<div class="mb-3 flex flex-wrap gap-2 technical-mono text-[9px] uppercase text-slate-500">
+<span>Approver: SRE Duty Lead</span>
+<span>Policy: P-DEP-441</span>
+<span>Scope: Production Shards</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/30 py-1 text-[10px] font-bold technical-mono hover:bg-tertiary-fixed-dim/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" type="button">APPROVE</button>
+<button class="flex-1 bg-error/10 text-error border border-error/30 py-1 text-[10px] font-bold technical-mono hover:bg-error/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" type="button">REJECT</button>
+<button class="flex-1 bg-surface-container-highest text-secondary border border-secondary/20 py-1 text-[10px] font-bold technical-mono hover:bg-secondary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" type="button">ESCALATE</button>
+</div>
+</div>
+<!-- Action Item 2 -->
+<div class="p-3 bg-surface-container-lowest border border-outline-variant/30 rounded-sm opacity-90">
+<div class="flex justify-between mb-2">
+<span class="technical-mono text-[10px] text-secondary font-bold">FLUSH_CACHE</span>
+<span class="technical-mono text-[10px] text-slate-500">REQ_943</span>
+</div>
+<p class="text-[11px] text-on-surface-variant mb-4">Clear persistent buffers for <code>shard-cluster-a-01</code>.</p>
+<div class="mb-3 flex flex-wrap gap-2 technical-mono text-[9px] uppercase text-slate-500">
+<span>Approver: Database Platform Lead</span>
+<span>Policy: P-OPS-219</span>
+<span>Exception: Emergency Flush</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/30 py-1 text-[10px] font-bold technical-mono hover:bg-tertiary-fixed-dim/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" type="button">APPROVE</button>
+<button class="flex-1 bg-error/10 text-error border border-error/30 py-1 text-[10px] font-bold technical-mono hover:bg-error/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" type="button">REJECT</button>
+<button class="flex-1 bg-surface-container-highest text-secondary border border-secondary/20 py-1 text-[10px] font-bold technical-mono hover:bg-secondary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" type="button">OVERRIDE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Execution Timeline -->
+<section class="bg-surface-container-high p-4 rounded-sm border border-slate-800/50">
+<h3 class="label-md uppercase tracking-widest text-on-surface font-bold text-[12px] mb-4">AI / Skill Execution Timeline</h3>
+<div class="space-y-4">
+<!-- Executed -->
+<div class="relative pl-6 border-l border-tertiary/30">
+<div class="absolute -left-1.5 top-0 w-3 h-3 bg-tertiary rounded-full shadow-[0_0_5px_#4edea3]"></div>
+<p class="technical-mono text-[10px] text-slate-500 mb-0.5">14:02:11 UTC</p>
+<p class="text-[11px] font-bold text-on-surface">Analyzed Database Logs</p>
+<p class="text-[10px] text-on-surface-variant italic">Pattern match found in slow_query.log</p>
+</div>
+<div class="relative pl-6 border-l border-tertiary/30">
+<div class="absolute -left-1.5 top-0 w-3 h-3 bg-tertiary rounded-full shadow-[0_0_5px_#4edea3]"></div>
+<p class="technical-mono text-[10px] text-slate-500 mb-0.5">14:00:55 UTC</p>
+<p class="text-[11px] font-bold text-on-surface">Scanned Cluster Health</p>
+<p class="text-[10px] text-on-surface-variant italic">Nodes responding; I/O saturation detected</p>
+</div>
+<!-- Pending -->
+<div class="relative pl-6 border-l border-slate-700">
+<div class="absolute -left-1.5 top-0 w-3 h-3 bg-slate-800 border border-slate-600 rounded-full"></div>
+<p class="technical-mono text-[10px] text-slate-600 mb-0.5">PENDING</p>
+<p class="text-[11px] font-bold text-slate-500">Apply Optimization Patch</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Persistent Right Rail) -->
+<aside class="fixed right-0 top-12 h-[calc(100vh-3rem)] w-80 flex flex-col bg-slate-900/90 backdrop-blur-lg border-l border-slate-800 z-40 shadow-2xl shadow-black/80">
+<div class="p-4 border-b border-slate-800">
+<h2 class="text-xs font-mono text-cyan-400">AI COMMAND PANEL</h2>
+<p class="text-[10px] technical-mono text-slate-500">LLM-7-ACTIVE | SYNC: 100%</p>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-6">
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-slate-950/50 p-3 rounded border border-slate-800">
+<p class="text-[9px] technical-mono uppercase text-slate-500">Control Mode</p>
+<p class="text-[10px] text-cyan-300 mt-1">Approval</p>
+</div>
+<div class="bg-slate-950/50 p-3 rounded border border-slate-800">
+<p class="text-[9px] technical-mono uppercase text-slate-500">Evidence Pack</p>
+<p class="text-[10px] text-cyan-300 mt-1">18 linked traces</p>
+</div>
+</div>
+<!-- System Insight -->
+<div>
+<h4 class="text-[10px] technical-mono text-cyan-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]" data-icon="bubble_chart">bubble_chart</span>
+                    System Insight
+                </h4>
+<div class="bg-slate-950/50 p-3 rounded border border-slate-800">
+<p class="text-[11px] leading-relaxed text-slate-300">"Current incident trajectory suggests a 14% chance of cascading failure to downstream payment services if not resolved within 12 minutes."</p>
+</div>
+</div>
+<!-- Execution History -->
+<div>
+<h4 class="text-[10px] technical-mono text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]" data-icon="history">history</span>
+                    Execution History
+                </h4>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-[10px] technical-mono py-1 border-b border-slate-800/50">
+<span class="text-slate-500">GET_NODE_STATUS</span>
+<span class="text-tertiary">SUCCESS</span>
+</div>
+<div class="flex justify-between items-center text-[10px] technical-mono py-1 border-b border-slate-800/50">
+<span class="text-slate-500">MAP_NETWORK_TOPOLOGY</span>
+<span class="text-tertiary">SUCCESS</span>
+</div>
+<div class="flex justify-between items-center text-[10px] technical-mono py-1 border-b border-slate-800/50">
+<span class="text-slate-500">COLLECT_METRICS_P99</span>
+<span class="text-tertiary">SUCCESS</span>
+</div>
+<div class="flex justify-between items-center text-[10px] technical-mono py-1 border-b border-slate-800/50">
+<span class="text-slate-500">GENERATE_DIAGNOSIS</span>
+<span class="text-tertiary">SUCCESS</span>
+</div>
+</div>
+</div>
+<!-- Real-time Terminal Feedback -->
+<div class="bg-black/40 p-2 rounded h-48 overflow-hidden font-mono text-[9px] text-cyan-500/80">
+<p>&gt; initiating deep_scan… done</p>
+<p>&gt; identifying bottlenecks… lock_contention found</p>
+<p>&gt; correlation with commit_sha: 55a29f… 100%</p>
+<p>&gt; recommending rollback…</p>
+<p>&gt; waiting for human_approval…</p>
+<p class="animate-pulse">_</p>
+</div>
+</div>
+<div class="p-4 border-t border-slate-800">
+<button class="w-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/30 py-2 font-mono text-xs hover:bg-cyan-400/20 glow-on-hover transition-shadow uppercase tracking-widest">
+                EXECUTE COMMAND
+            </button>
+</div>
+</aside>
+<!-- Visual Polish: Noise Texture Overlay (Simulated with Gradient) -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.02] mix-blend-overlay bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] z-[100]"></div>
+</body></html>

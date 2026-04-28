@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard | SDLC Tower</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#45464d",
+                        "on-background": "#dae2fd",
+                        "secondary-container": "#00a2e6",
+                        "inverse-on-surface": "#283044",
+                        "secondary-fixed": "#c9e6ff",
+                        "outline": "#909097",
+                        "inverse-primary": "#565e74",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#131b2e",
+                        "background": "#0b1326",
+                        "on-secondary-fixed-variant": "#004c6e",
+                        "on-primary": "#283044",
+                        "inverse-surface": "#dae2fd",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface-variant": "#c6c6cd",
+                        "secondary": "#89ceff",
+                        "tertiary-container": "#001c10",
+                        "primary-container": "#0f172a",
+                        "surface-dim": "#0b1326",
+                        "on-tertiary": "#003824",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#2d3449",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "surface-tint": "#bec6e0",
+                        "surface": "#0b1326",
+                        "on-secondary": "#00344d",
+                        "secondary-fixed-dim": "#89ceff",
+                        "on-secondary-fixed": "#001e2f",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-container": "#798098",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-surface": "#dae2fd",
+                        "surface-container-high": "#222a3d",
+                        "on-tertiary-container": "#009365",
+                        "tertiary": "#4edea3",
+                        "primary": "#bec6e0",
+                        "surface-bright": "#31394d",
+                        "surface-container-highest": "#2d3449",
+                        "on-secondary-container": "#00344e",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container": "#171f33",
+                        "primary-fixed": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .machined-gradient {
+            background: linear-gradient(135deg, #89ceff 0%, #00344e 100%);
+        }
+        .status-led {
+            box-shadow: 0 0 8px currentColor;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar Anchor -->
+<aside class="flex flex-col h-full border-r border-slate-800 bg-slate-900 docked left-0 h-screen w-64 flex-shrink-0 z-50">
+<div class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 bg-blue-500 rounded-sm flex items-center justify-center">
+<span aria-hidden="true" class="material-symbols-outlined text-slate-900" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div>
+<h1 class="text-blue-500 font-bold tracking-tighter text-lg leading-none">SDLC Tower</h1>
+<p class="font-mono text-[10px] text-slate-500 uppercase tracking-widest mt-1">Agentic SDLC Control Tower</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-4 space-y-1">
+<a aria-current="page" class="px-4 py-2 text-blue-400 border-l-2 border-blue-400 bg-slate-800/80 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">groups</span>
+<span>Team Space</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">inventory_2</span>
+<span>Project Space</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">description</span>
+<span>Requirement Management</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">assignment</span>
+<span>Project Management</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">design_services</span>
+<span>Design Management</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">terminal</span>
+<span>Code &amp; Build</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">biotech</span>
+<span>Testing</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">rocket_launch</span>
+<span>Deployment</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">emergency</span>
+<span>Incident Management</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">psychology</span>
+<span>AI Center</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">assessment</span>
+<span>Report Center</span>
+</a>
+<a class="px-4 py-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors duration-150 flex items-center gap-3 font-inter text-xs font-medium uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">settings_applications</span>
+<span>Platform Center</span>
+</a>
+</nav>
+<footer class="p-4 border-t border-slate-800 space-y-2">
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 text-xs font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">menu_book</span>
+<span>Docs</span>
+</a>
+<button class="flex items-center gap-3 text-slate-400 hover:text-slate-100 text-xs font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-inset" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">logout</span>
+<span>Logout</span>
+</button>
+</footer>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 bg-surface">
+<!-- TopNavBar Anchor -->
+<header class="flex justify-between items-center px-6 w-full h-12 bg-slate-950/60 backdrop-blur-md border-b border-slate-800 z-40 shrink-0">
+<div class="flex items-center gap-8">
+<span class="text-lg font-black text-slate-100 tracking-tight">SDLC Tower</span>
+<div class="hidden xl:flex items-center gap-2 font-mono text-[10px] uppercase tracking-wide text-slate-400">
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Workspace</span>
+<span class="text-blue-300">GLOBAL_OPS</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Application</span>
+<span class="text-blue-300">CORE_BANKING</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">SNOW Group</span>
+<span class="text-blue-300">SNOW_WEST_04</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Project</span>
+<span class="text-blue-300">QUANTUM_MESH</span>
+</div>
+<div class="flex items-center gap-1 rounded-sm bg-slate-900/70 px-2 py-1 border border-slate-800">
+<span class="text-slate-500">Environment</span>
+<span class="text-blue-300">STAGING_1</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<label class="sr-only" for="control-tower-search">Search Control Tower</label>
+<input aria-label="Search Control Tower" autocomplete="off" class="bg-surface-container-low border-none text-xs rounded-sm pl-8 pr-4 py-1.5 focus:ring-1 focus:ring-secondary w-64" id="control-tower-search" name="control_tower_search" placeholder="Search Control Tower…" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="material-symbols-outlined absolute left-2 top-1.5 text-sm text-slate-500">search</span>
+</div>
+<div class="flex items-center gap-3 text-slate-400">
+<button aria-label="View notifications" class="material-symbols-outlined cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" type="button">notifications</button>
+<button aria-label="Open audit center" class="material-symbols-outlined cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" type="button">history_edu</button>
+<button aria-label="Open settings" class="material-symbols-outlined cursor-pointer hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" type="button">settings</button>
+<button aria-label="Open user profile" class="w-7 h-7 rounded-full bg-slate-700 overflow-hidden border border-slate-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" type="button">
+<img alt="User profile" data-alt="professional headshot of a software engineering lead in a dark tech-focused environment with subtle blue lighting" height="28" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxU7uLCFkVNLTZjA2WrARmT1vqpzEZ3b2x6XCR5grVOYC8tsqAbIs3_CbVl7SU4vri8QPgsG2_Bz3I2mlDy2WY7JiwCha9OefCgJ81qNn5jeoBmp2SvHlRwmjGwfRH6jqdHrY2kpR-5sFJuAQftaDsxt2lTJwL7IZ6Lcvu7jGvpsUvjwhHgE5OLReuSFSYTE-ndddmFW_yySpJ77D_RDkQud_XR9KEsOXg36Xg0M1yU0yLCm6ZCYZf6K9FznI3qUa7VhEikPnLy6Y" width="28"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto p-6 flex gap-6">
+<div class="flex-1 space-y-6">
+<!-- SdlcStoryChain Hero -->
+<section class="surface-container-low rounded-lg p-6 overflow-hidden relative">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-on-surface font-bold text-xl uppercase tracking-tight">End-to-End Delivery Story</h2>
+<p class="text-on-surface-variant text-xs font-mono">FLOW_ID: SDLC-772-X90 | STATUS: ACTIVE_SYNCHRONIZATION</p>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<p class="text-[10px] text-slate-500 uppercase font-bold">Total Health</p>
+<p class="text-tertiary font-mono text-lg leading-none">94.2%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-slate-500 uppercase font-bold">AI Autonomy</p>
+<p class="text-secondary font-mono text-lg leading-none">68.5%</p>
+</div>
+</div>
+</div>
+<div class="mb-6 p-4 bg-surface-container-lowest rounded-sm border border-outline-variant/10">
+<div class="flex items-center justify-between mb-3">
+<div>
+<p class="text-[10px] font-mono uppercase text-slate-500">Spec-Driven Mainline</p>
+<p class="text-[10px] text-on-surface-variant mt-1">Requirement to Learning trace anchored on Spec as the execution contract.</p>
+</div>
+<span class="text-[10px] font-mono text-secondary uppercase">11 linked stages</span>
+</div>
+<div class="grid grid-cols-11 gap-2">
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-tertiary">Requirement</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-tertiary">User Story</p>
+</div>
+<div class="p-2 rounded-sm bg-secondary/10 border border-secondary/20 text-center">
+<p class="text-[8px] font-mono uppercase text-secondary">Spec</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-slate-300">Architecture</p>
+</div>
+<div class="p-2 rounded-sm bg-primary-container/20 border border-secondary/20 text-center">
+<p class="text-[8px] font-mono uppercase text-secondary">Design</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-slate-300">Tasks</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-slate-300">Code</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-slate-300">Test</p>
+</div>
+<div class="p-2 rounded-sm bg-error/10 border border-error/20 text-center">
+<p class="text-[8px] font-mono uppercase text-error">Deploy</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-tertiary">Incident</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-high border border-outline-variant/10 text-center">
+<p class="text-[8px] font-mono uppercase text-secondary">Learning</p>
+</div>
+</div>
+</div>
+<p class="text-[10px] font-mono uppercase text-slate-500 mb-4">Operational Phase Grouping</p>
+<div class="relative flex justify-between items-start">
+<!-- Horizontal Line -->
+<div class="absolute top-10 left-0 right-0 h-px bg-slate-800 z-0"></div>
+<!-- SDLC Stages -->
+<div class="relative z-10 flex flex-col items-center group w-1/8">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-outline-variant/20 flex flex-col items-center justify-center mb-4 transition-transform group-hover:scale-105">
+<span aria-hidden="true" class="material-symbols-outlined text-tertiary mb-1">description</span>
+<span class="text-[9px] font-mono text-tertiary">OPTIMAL</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight">Requirement<br/>Intake</p>
+<div class="mt-4 flex flex-col items-center">
+<div class="w-12 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[100%]"></div>
+</div>
+<span class="text-[8px] font-mono mt-1 text-slate-500">H: 20% | A: 80%</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-outline-variant/20 flex flex-col items-center justify-center mb-4 transition-transform group-hover:scale-105">
+<span aria-hidden="true" class="material-symbols-outlined text-tertiary mb-1">architecture</span>
+<span class="text-[9px] font-mono text-tertiary">OPTIMAL</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight">User Story<br/>&amp; Spec</p>
+<div class="mt-4 flex flex-col items-center">
+<div class="w-12 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[100%]"></div>
+</div>
+<span class="text-[8px] font-mono mt-1 text-slate-500">H: 40% | A: 60%</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8">
+<div class="w-20 h-20 rounded-sm bg-primary-container border border-secondary/40 flex flex-col items-center justify-center mb-4 transition-transform group-hover:scale-105">
+<div class="w-6 h-6 rounded-full border-2 border-secondary border-t-transparent animate-spin mb-1"></div>
+<span class="text-[9px] font-mono text-secondary">ACTIVE</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight">Architecture<br/>&amp; Design</p>
+<div class="mt-4 flex flex-col items-center">
+<div class="w-12 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[45%]"></div>
+</div>
+<span class="text-[8px] font-mono mt-1 text-slate-500">H: 10% | A: 90%</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8 opacity-60">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-outline-variant/20 flex flex-col items-center justify-center mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-slate-500 mb-1">terminal</span>
+<span class="text-[9px] font-mono text-slate-500">QUEUED</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight text-slate-500">Tasks<br/>&amp; Code</p>
+<div class="mt-4 flex flex-col items-center">
+<div class="w-12 h-1 bg-slate-800 rounded-full"></div>
+<span class="text-[8px] font-mono mt-1 text-slate-600">PENDING</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8 opacity-40">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-outline-variant/20 flex flex-col items-center justify-center mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-slate-500 mb-1">biotech</span>
+<span class="text-[9px] font-mono text-slate-500">QUEUED</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight text-slate-500">Test<br/>&amp; Quality</p>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-error/20 flex flex-col items-center justify-center mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-error mb-1">rocket_launch</span>
+<span class="text-[9px] font-mono text-error">DEGRADED</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight">Deploy<br/>&amp; Release</p>
+<div class="mt-4 flex flex-col items-center">
+<div class="w-12 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-error h-full w-[20%]"></div>
+</div>
+<span class="text-[8px] font-mono mt-1 text-error">CRIT_ERROR</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-outline-variant/20 flex flex-col items-center justify-center mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-tertiary mb-1">emergency</span>
+<span class="text-[9px] font-mono text-tertiary">STABLE</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight">Incident<br/>Response</p>
+</div>
+<div class="relative z-10 flex flex-col items-center group w-1/8">
+<div class="w-20 h-20 rounded-sm bg-surface-container-high border border-outline-variant/20 flex flex-col items-center justify-center mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-secondary mb-1">psychology</span>
+<span class="text-[9px] font-mono text-secondary">LEARNING</span>
+</div>
+<p class="text-[10px] font-bold text-center uppercase tracking-tighter leading-tight">Learning<br/>Loop</p>
+</div>
+</div>
+</section>
+<!-- Middle Grid: Metrics & Governance -->
+<div class="grid grid-cols-12 gap-6">
+<!-- DeliveryMetrics -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4 flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm">speed</span>
+                                Delivery Rhythm
+                            </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-3">
+<div>
+<p class="text-2xl font-mono font-bold">42.8</p>
+<p class="text-[10px] uppercase text-slate-400">Current Velocity (SP)</p>
+</div>
+<span class="text-tertiary text-xs font-mono">+12% vs LW</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-3">
+<div>
+<p class="text-2xl font-mono font-bold text-secondary">3.4d</p>
+<p class="text-[10px] uppercase text-slate-400">Cycle Time</p>
+</div>
+<span class="text-tertiary text-xs font-mono">P90 ATTAINED</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-2xl font-mono font-bold">186</p>
+<p class="text-[10px] uppercase text-slate-400">Monthly Throughput</p>
+</div>
+<span class="text-slate-500 text-xs font-mono">TARGET: 200</span>
+</div>
+</div>
+</div>
+<!-- OperationalNarrative -->
+<div class="surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4 flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm">health_metrics</span>
+                                Release Narrative
+                            </h3>
+<div class="space-y-4">
+<div class="p-3 bg-surface-container-lowest rounded-sm border-l-4 border-tertiary">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[10px] font-bold text-on-surface">Release Confidence</span>
+<span class="text-[10px] font-mono text-tertiary">98%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full">
+<div class="h-full bg-tertiary w-[98%]"></div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-sm border-l-4 border-error">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[10px] font-bold text-on-surface">Operational Stability</span>
+<span class="text-[10px] font-mono text-error">DEGRADED</span>
+</div>
+<p class="text-[9px] text-slate-400 font-mono mt-1 leading-relaxed">
+                                        Agent-led healing active on cluster K8S-PROD-01. Latency spikes detected in legacy middleware.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- GovernanceAuditLog -->
+<div class="col-span-12 lg:col-span-8 surface-container-high rounded-lg p-0 flex flex-col">
+<div class="p-5 flex justify-between items-center border-b border-outline-variant/10">
+<h3 class="text-xs font-bold uppercase text-slate-500 flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm">gavel</span>
+                                Governance &amp; Traceability Audit
+                            </h3>
+<button class="text-[10px] text-secondary font-bold uppercase hover:underline">Export Logs</button>
+</div>
+<div class="flex-1 overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-lowest text-slate-500 font-mono text-[10px] uppercase border-b border-outline-variant/10">
+<tr>
+<th class="px-6 py-3 font-medium">Trace ID</th>
+<th class="px-6 py-3 font-medium">Agent Action</th>
+<th class="px-6 py-3 font-medium">Compliance</th>
+<th class="px-6 py-3 font-medium">Timestamp</th>
+<th class="px-6 py-3 font-medium">Human Sign-off</th>
+</tr>
+</thead>
+<tbody class="text-xs font-mono divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="px-6 py-4 text-slate-500">#AX-2091</td>
+<td class="px-6 py-4 text-on-surface">Spec Generated (Phase 1)</td>
+<td class="px-6 py-4"><span class="text-tertiary">PASSED</span></td>
+<td class="px-6 py-4 text-slate-500">14:22:10 UTC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary status-led"></div>
+<span class="text-[10px] font-bold">APPROVED</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="px-6 py-4 text-slate-500">#AX-2092</td>
+<td class="px-6 py-4 text-on-surface">Auto-Refactor: Auth Module</td>
+<td class="px-6 py-4"><span class="text-tertiary">PASSED</span></td>
+<td class="px-6 py-4 text-slate-500">14:18:55 UTC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary status-led"></div>
+<span class="text-[10px] font-bold">PENDING</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="px-6 py-4 text-slate-500">#AX-2093</td>
+<td class="px-6 py-4 text-on-surface">Security Policy Injection</td>
+<td class="px-6 py-4"><span class="text-error">WARNING</span></td>
+<td class="px-6 py-4 text-slate-500">14:15:22 UTC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-600"></div>
+<span class="text-[10px] font-bold text-slate-500">REQUIRED</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="px-6 py-4 text-slate-500">#AX-2094</td>
+<td class="px-6 py-4 text-on-surface">QA Validation Suite 04</td>
+<td class="px-6 py-4"><span class="text-tertiary">PASSED</span></td>
+<td class="px-6 py-4 text-slate-500">14:10:01 UTC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary status-led"></div>
+<span class="text-[10px] font-bold">AUTO_SIG</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="px-6 py-4 text-slate-500">#AX-2095</td>
+<td class="px-6 py-4 text-on-surface">Schema Migration Script</td>
+<td class="px-6 py-4"><span class="text-tertiary">PASSED</span></td>
+<td class="px-6 py-4 text-slate-500">13:55:42 UTC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary status-led"></div>
+<span class="text-[10px] font-bold">APPROVED</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-4 surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4">Team Space Pulse</h3>
+<div class="space-y-3 text-[10px] font-mono">
+<div class="flex items-center justify-between p-2 bg-surface-container-lowest rounded-sm">
+<span class="text-on-surface">CORE_BANKING / WEST</span>
+<span class="text-tertiary">12 active projects</span>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-lowest rounded-sm">
+<span class="text-on-surface">PAYMENTS / NORTH</span>
+<span class="text-secondary">8 specs in review</span>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-lowest rounded-sm">
+<span class="text-on-surface">RISK / SOUTH</span>
+<span class="text-error">2 releases blocked</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4">Requirement &amp; Spec Flow</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-slate-400">New Requirements</span>
+<span class="text-lg font-mono text-on-surface">24</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-slate-400">Specs Generated</span>
+<span class="text-lg font-mono text-secondary">18</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-slate-400">Spec Coverage</span>
+<span class="text-lg font-mono text-tertiary">82%</span>
+</div>
+<p class="text-[9px] font-mono text-slate-500">6 requirements are still waiting for user-story and spec contract generation.</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4">Test &amp; Quality Signal</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-slate-400">Pass Rate</span>
+<span class="text-lg font-mono text-tertiary">96.8%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-slate-400">Defect Density</span>
+<span class="text-lg font-mono text-on-surface">0.31</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-slate-400">Spec Constraint Coverage</span>
+<span class="text-lg font-mono text-secondary">74%</span>
+</div>
+<p class="text-[9px] font-mono text-slate-500">Coverage gap is concentrated in rollback, access policy, and failure handling scenarios.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-7 surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4">Recent Critical Actions</h3>
+<div class="space-y-3 text-[10px] font-mono">
+<div class="flex items-start justify-between gap-4 p-3 bg-surface-container-lowest rounded-sm">
+<div>
+<p class="text-on-surface">AI generated `spec-v19` for Checkout Risk Controls</p>
+<p class="text-slate-500 mt-1">Linked to requirement RM-1192 and design review DR-882.</p>
+</div>
+<span class="text-secondary">14:22 UTC</span>
+</div>
+<div class="flex items-start justify-between gap-4 p-3 bg-surface-container-lowest rounded-sm">
+<div>
+<p class="text-on-surface">Human governance blocked deployment to PROD_GLOBAL</p>
+<p class="text-slate-500 mt-1">Failure reason: test evidence missing for exception policy branch.</p>
+</div>
+<span class="text-error">14:15 UTC</span>
+</div>
+<div class="flex items-start justify-between gap-4 p-3 bg-surface-container-lowest rounded-sm">
+<div>
+<p class="text-on-surface">Incident learning patch published to latency prevention skill</p>
+<p class="text-slate-500 mt-1">Expected to reduce regression probability by 18%.</p>
+</div>
+<span class="text-tertiary">13:58 UTC</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 surface-container-high rounded-lg p-5">
+<h3 class="text-xs font-bold uppercase text-slate-500 mb-4">Value Proof Storyline</h3>
+<div class="space-y-3 text-[10px] font-mono">
+<div class="p-3 bg-surface-container-lowest rounded-sm border-l-4 border-tertiary">
+<p class="text-on-surface">Spec-first delivery shortened average design review by 1.2 days.</p>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-sm border-l-4 border-secondary">
+<p class="text-on-surface">AI-generated tests covered 34 additional high-risk constraints this sprint.</p>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-sm border-l-4 border-error">
+<p class="text-on-surface">Governance prevented one unsafe production release with incomplete rollback evidence.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats -->
+<div class="grid grid-cols-4 gap-6">
+<div class="p-4 rounded-sm border-t-2 border-secondary bg-surface-container-lowest">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Policy Health</p>
+<p class="text-xl font-mono text-on-surface">99.2%</p>
+<p class="text-[9px] text-tertiary font-mono mt-1">COMPLIANT</p>
+</div>
+<div class="p-4 rounded-sm border-t-2 border-secondary bg-surface-container-lowest">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Agent Utilization</p>
+<p class="text-xl font-mono text-on-surface">821 <span class="text-xs text-slate-500">hrs/mo</span></p>
+<p class="text-[9px] text-slate-400 font-mono mt-1">▲ 14% GROWTH</p>
+</div>
+<div class="p-4 rounded-sm border-t-2 border-secondary bg-surface-container-lowest">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Human-in-the-loop</p>
+<p class="text-xl font-mono text-on-surface">12 <span class="text-xs text-slate-500">points</span></p>
+<p class="text-[9px] text-slate-400 font-mono mt-1">INTERVENTION REQ</p>
+</div>
+<div class="p-4 rounded-sm border-t-2 border-secondary bg-surface-container-lowest">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Cost per Feature</p>
+<p class="text-xl font-mono text-on-surface">$112.40</p>
+<p class="text-[9px] text-tertiary font-mono mt-1">▼ 30% OPTIMIZED</p>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: AI Command Panel -->
+<aside class="w-80 flex flex-col gap-6 shrink-0">
+<!-- AI Command Panel -->
+<div class="surface-container-high rounded-lg flex-1 flex flex-col overflow-hidden">
+<div class="p-4 bg-slate-950/40 border-b border-outline-variant/10 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-secondary text-lg">psychology</span>
+<span class="text-xs font-bold uppercase">AI Command Panel</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-tertiary animate-pulse status-led"></div>
+</div>
+<div class="px-4 py-3 bg-surface-container-lowest border-b border-outline-variant/10 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono uppercase text-slate-500">Control Mode</span>
+<span class="text-[10px] font-mono text-secondary">Approval Required</span>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 rounded-sm border border-outline-variant/20 text-[9px] font-mono text-slate-500 uppercase">Auto</span>
+<span class="px-2 py-1 rounded-sm border border-secondary/30 bg-secondary/10 text-[9px] font-mono text-secondary uppercase">Approval</span>
+<span class="px-2 py-1 rounded-sm border border-outline-variant/20 text-[9px] font-mono text-slate-500 uppercase">Manual</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-sm bg-surface-container-highest border border-outline-variant/10">
+<p class="text-[9px] font-mono uppercase text-slate-500">Reasoning</p>
+<p class="text-[10px] text-on-surface mt-1">Spec bottleneck isolated in Code to Test transition.</p>
+</div>
+<div class="p-2 rounded-sm bg-surface-container-highest border border-outline-variant/10">
+<p class="text-[9px] font-mono uppercase text-slate-500">Evidence</p>
+<p class="text-[10px] text-on-surface mt-1">12 linked traces across Spec, test gate, and release logs.</p>
+</div>
+</div>
+</div>
+<div class="p-4 flex-1 space-y-4 overflow-y-auto">
+<div class="p-3 bg-surface-container-lowest rounded-sm border border-outline-variant/10">
+<p class="text-[10px] text-secondary font-mono mb-2">SYSTEM_MSG:</p>
+<p class="text-xs leading-relaxed text-on-surface-variant">
+                                Identified bottleneck in <span class="text-secondary">Code-to-Test</span> phase. Recommendation: Increase agent parallelism for unit-test generation.
+                            </p>
+<div class="mt-3 flex gap-2">
+<button class="px-2 py-1 bg-secondary text-on-secondary text-[9px] font-bold rounded-sm uppercase">Optimize Now</button>
+<button class="px-2 py-1 border border-outline-variant text-slate-400 text-[9px] font-bold rounded-sm uppercase">Dismiss</button>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-sm border border-outline-variant/10">
+<p class="text-[10px] text-tertiary font-mono mb-2">SECURITY_ALERT:</p>
+<p class="text-xs leading-relaxed text-on-surface-variant">
+                                New zero-day vulnerability detected in `node-postgres-client@2.4.1`. 
+                            </p>
+<p class="text-[10px] text-slate-500 mt-2">AGENT_PLAN: Automated patching initiated in PR-9022.</p>
+</div>
+<div class="relative h-24 rounded-sm overflow-hidden mt-6">
+<img alt="cybersecurity visualization" class="w-full h-full object-cover opacity-30" data-alt="high-tech abstract circuit board visualization with glowing blue and green data points on a dark background" height="96" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWYhEzcicK939TxV7zJXg039u4d-5i2Fs2qDG2PwnPEHk0fFLHZfc7Q3SJKkXwxoPY7erjcnG-xJEIUs_I1jJlfS4OeAbUzmjKmbftwFhbS5iSeb_-U6fp1qaTf3P5FOHBB_2wF6n_AKIUfZsO990P99z03w0Yp4sidxlofQtVh8-jmVT8MkI4wk4aDXQWGhV4P8iidYdxWoEiHqh1lFuLsDjaaiM2v5lQlsnb7LlRlN1Oi1I52bZfex3xQLUXbz_y9iU-sPlqcFo" width="640"/>
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<p class="text-[10px] font-mono text-center text-secondary leading-tight">ACTIVE MONITORING:<br/>THREAD_POOL_01… OK</p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<div class="relative">
+<label class="sr-only" for="control-tower-command">Issue command to agents</label>
+<input aria-label="Issue command to agents" autocomplete="off" class="w-full bg-background border-outline-variant/20 text-xs font-mono rounded-sm py-2 px-3 focus:ring-1 focus:ring-secondary pr-10" id="control-tower-command" name="agent_command" placeholder="Issue command to agents…" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="material-symbols-outlined absolute right-2 top-2 text-slate-500 text-sm">send</span>
+</div>
+</div>
+</div>
+<!-- Agent Fleet Stats -->
+<div class="surface-container-high rounded-lg p-4">
+<h3 class="text-[10px] font-bold uppercase text-slate-500 mb-4 tracking-widest">Active Agent Fleet</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm text-secondary">smart_toy</span>
+<span class="text-xs font-mono">Spec-Agent-Alpha</span>
+</div>
+<span class="text-[9px] bg-tertiary/10 text-tertiary px-1.5 py-0.5 rounded-full font-mono">IDLE</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm text-secondary">smart_toy</span>
+<span class="text-xs font-mono">Code-Syn-Bot-04</span>
+</div>
+<span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded-full font-mono">WORKING</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm text-secondary">smart_toy</span>
+<span class="text-xs font-mono">QA-Verify-Node</span>
+</div>
+<span class="text-[9px] bg-tertiary/10 text-tertiary px-1.5 py-0.5 rounded-full font-mono">IDLE</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>
